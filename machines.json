@@ -112,14 +112,14 @@
       "playerCount": 4,
       "ipdbId": 1125,
       "imageUrl": "https://img.opdb.org/6d886496-f132-44c5-94d3-43b76b3a1d05-medium.jpg",
-      "tiltforumsUrl": "https://tiltforums.com/t/points-for-extra-ball-wiki/2725"
+      "tiltforumsUrl": null
     },
     {
       "name": "James Bond 007 (Pro)",
       "active": true,
       "opdbId": null,
       "era": null,
-      "tiltforumsUrl": "https://tiltforums.com/t/james-bond-007-rulesheet/7893"
+      "tiltforumsUrl": null
     },
     {
       "name": "JAWS (Pro)",
@@ -147,7 +147,7 @@
       "playerCount": null,
       "ipdbId": null,
       "imageUrl": "https://img.opdb.org/359b002f-0eac-4999-b582-67238bbeb9e5-medium.jpg",
-      "tiltforumsUrl": "https://tiltforums.com/t/king-kong-myth-of-terror-island-rulesheet/9514"
+      "tiltforumsUrl": null
     },
     {
       "name": "Pulp Fiction",
@@ -259,7 +259,7 @@
       "playerCount": 4,
       "ipdbId": null,
       "imageUrl": "https://img.opdb.org/0f18e457-0921-4b91-9243-010fad8065c7-medium.jpg",
-      "tiltforumsUrl": "https://tiltforums.com/t/the-uncanny-x-men-rulesheet/9100"
+      "tiltforumsUrl": null
     },
     {
       "name": "WWF Royal Rumble",
@@ -273,7 +273,7 @@
       "playerCount": 4,
       "ipdbId": 2820,
       "imageUrl": "https://img.opdb.org/a12b74c6-09e2-4866-9e70-fb58e418ea91-medium.jpg",
-      "tiltforumsUrl": "https://tiltforums.com/t/list-of-games-with-their-current-code-number-wiki/3615"
+      "tiltforumsUrl": null
     }
   ]
 }
