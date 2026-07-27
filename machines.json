@@ -1,0 +1,94 @@
+{
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk1",
+  "sourceDate": "2026-07-27",
+  "machines": [
+    {
+      "name": "Avengers: Infinity Quest (Pro)",
+      "active": true
+    },
+    {
+      "name": "Batman 66 (Catwoman Signature Edition)",
+      "active": true
+    },
+    {
+      "name": "Black Knight",
+      "active": true
+    },
+    {
+      "name": "Blackout",
+      "active": true
+    },
+    {
+      "name": "Card Whiz",
+      "active": true
+    },
+    {
+      "name": "Deadpool (Pro)",
+      "active": false
+    },
+    {
+      "name": "Dennis Lillee's Howzat!",
+      "active": true
+    },
+    {
+      "name": "Fish Tales",
+      "active": true
+    },
+    {
+      "name": "Harlem Globetrotters On Tour",
+      "active": true
+    },
+    {
+      "name": "James Bond 007 (Pro)",
+      "active": true
+    },
+    {
+      "name": "JAWS (Pro)",
+      "active": true
+    },
+    {
+      "name": "King Kong: Myth of Terror Island (Premium)",
+      "active": true
+    },
+    {
+      "name": "Pulp Fiction",
+      "active": true
+    },
+    {
+      "name": "Seawitch",
+      "active": true
+    },
+    {
+      "name": "Sinbad (EM)",
+      "active": true
+    },
+    {
+      "name": "Star Trek (Pro)",
+      "active": true
+    },
+    {
+      "name": "Stranger Things (Pro)",
+      "active": true
+    },
+    {
+      "name": "Terminator 2: Judgment Day",
+      "active": false
+    },
+    {
+      "name": "The Party Zone",
+      "active": true
+    },
+    {
+      "name": "The Sopranos",
+      "active": true
+    },
+    {
+      "name": "The Uncanny X-Men (Pro)",
+      "active": true
+    },
+    {
+      "name": "WWF Royal Rumble",
+      "active": true
+    }
+  ]
+}
