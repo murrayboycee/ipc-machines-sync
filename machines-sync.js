@@ -60,11 +60,31 @@ async function opdbGet(opdbId) {
 const TILTFORUMS_BASE = "https://tiltforums.com";
 let tiltforumsDebugged = false;
 
+// Guards against accepting an irrelevant top search result (e.g. searching
+// "Card Whiz" returning "Rick and Morty" as the only hit). Requires at
+// least half of the machine name's meaningful words (3+ letters) to
+// actually appear in the candidate topic's title before trusting it.
+function isRelevantTiltforumsMatch(machineName, topicTitle) {
+  const mTokens = tokens(machineName).filter((t) => t.length >= 3);
+  if (mTokens.length === 0) return false;
+  const tTokens = tokens(topicTitle || "");
+  const matched = mTokens.filter((t) => tTokens.indexOf(t) !== -1).length;
+  return matched / mTokens.length >= 0.5;
+}
+
+function pickRelevantTopic(machineName, topics) {
+  for (const t of topics) {
+    if (isRelevantTiltforumsMatch(machineName, t.title)) return t;
+  }
+  return null;
+}
+
 // Uses Discourse's public search endpoint (the same one that powers the
 // site's own search bar) to find the most relevant rulesheet topic for a
 // machine, restricted to the Wiki Rulesheets category so we don't
 // accidentally link to an unrelated general-discussion thread. Falls back
-// to an unrestricted search if the category-scoped one finds nothing.
+// to an unrestricted search if the category-scoped one finds nothing, and
+// rejects results that don't actually seem to be about this machine.
 async function findTiltforumsUrl(machineName) {
   async function search(query) {
     const url = `${TILTFORUMS_BASE}/search.json?q=${encodeURIComponent(query)}`;
@@ -83,15 +103,20 @@ async function findTiltforumsUrl(machineName) {
     }
 
     let topics = (data && data.topics) || [];
-    if (topics.length === 0) {
-      // Category filter may have found nothing — try an unrestricted search.
+    let top = pickRelevantTopic(machineName, topics);
+
+    if (!top) {
+      // Category filter may have found nothing relevant — try again
+      // without restricting to the category.
       data = await search(`${machineName} rulesheet`);
       topics = (data && data.topics) || [];
+      top = pickRelevantTopic(machineName, topics);
     }
-    if (topics.length === 0) return null;
 
-    const top = topics[0];
-    if (!top.slug || !top.id) return null;
+    if (!top || !top.slug || !top.id) {
+      console.log(`  No relevant TiltForums rulesheet found for "${machineName}" — leaving blank.`);
+      return null;
+    }
     return `${TILTFORUMS_BASE}/t/${top.slug}/${top.id}`;
   } catch (err) {
     console.warn(`  Could not search TiltForums for "${machineName}": ${err.message}`);
