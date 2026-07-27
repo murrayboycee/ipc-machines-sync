@@ -47,6 +47,24 @@ async function matchplayGet(path) {
   return res.json();
 }
 
+const SILVERBALL_MANIA_BASE = "https://rules.silverballmania.com";
+
+// Silverball Mania's rules site supports a direct, deterministic lookup by
+// OPDB ID (confirmed pattern from the site's own creator) — covering
+// roughly 1960s through mid-1980s machines. Since it's a real ID lookup
+// rather than a name-based guess, it's more reliable than search whenever
+// it applies, so it's checked first for older machines specifically.
+async function checkSilverballManiaUrl(opdbId) {
+  if (!opdbId) return null;
+  const url = `${SILVERBALL_MANIA_BASE}/rules/${encodeURIComponent(opdbId)}`;
+  try {
+    const res = await fetch(url);
+    return res.ok ? url : null;
+  } catch (err) {
+    return null;
+  }
+}
+
 async function opdbGet(opdbId) {
   const url = `${OPDB_BASE}/api/machines/${encodeURIComponent(opdbId)}?api_token=${OPDB_API_TOKEN}`;
   const res = await fetch(url);
@@ -58,18 +76,74 @@ async function opdbGet(opdbId) {
 }
 
 const TILTFORUMS_BASE = "https://tiltforums.com";
+const RULESHEET_MASTER_LIST_URL = `${TILTFORUMS_BASE}/t/rulesheet-master-list/7230`;
 let tiltforumsDebugged = false;
 
-// Guards against accepting an irrelevant top search result (e.g. searching
-// "Card Whiz" returning "Rick and Morty" as the only hit). Requires at
-// least half of the machine name's meaningful words (3+ letters) to
-// actually appear in the candidate topic's title before trusting it.
-function isRelevantTiltforumsMatch(machineName, topicTitle) {
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+// The Wiki Rulesheets community maintains a single curated index page
+// listing every rulesheet by manufacturer, e.g.:
+//   <a href="https://tiltforums.com/t/deadpool-rulesheet/4311">Deadpool</a>
+// Fetching this ONE page and matching against it is far more reliable
+// than searching per-machine (no rate limits, and it's a real curated
+// list rather than a fuzzy guess). Live search is only used as a
+// fallback for machines the master list doesn't cover.
+async function fetchRulesheetMasterList() {
+  const res = await fetch(RULESHEET_MASTER_LIST_URL);
+  if (!res.ok) throw new Error(`Master list fetch -> HTTP ${res.status}`);
+  const html = await res.text();
+  const linkRegex = /<a\s+href="(https?:\/\/(?:www\.)?tiltforums\.com\/t\/[^"]+)"[^>]*>([^<]+)<\/a>/gi;
+  const entries = [];
+  let match;
+  while ((match = linkRegex.exec(html)) !== null) {
+    const url = match[1].replace(/^http:/, "https:");
+    const name = match[2].trim();
+    if (name) entries.push({ name, url });
+  }
+  console.log(`Parsed ${entries.length} rulesheet links from the Master List.`);
+  return entries;
+}
+
+// Retries on HTTP 429 (rate limited) with increasing backoff — TiltForums
+// blocks anonymous search requests fairly aggressively, so a fixed short
+// delay between machines isn't enough on its own.
+async function tiltforumsSearch(query) {
+  const url = `${TILTFORUMS_BASE}/search.json?q=${encodeURIComponent(query)}`;
+  const delays = [3000, 6000, 12000];
+  for (let attempt = 0; attempt <= delays.length; attempt++) {
+    const res = await fetch(url);
+    if (res.status === 429) {
+      if (attempt === delays.length) {
+        throw new Error(`HTTP 429 (rate limited) after ${delays.length} retries`);
+      }
+      console.log(`  Rate limited, waiting ${delays[attempt] / 1000}s before retry...`);
+      await sleep(delays[attempt]);
+      continue;
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+}
+
+// Guards against accepting an irrelevant result (e.g. searching "Card
+// Whiz" returning "Rick and Morty" as the only hit). Checks BOTH
+// directions — the master list often uses a short generic name ("Batman
+// 66") while our machine name is a specific edition ("Batman 66
+// (Catwoman Signature Edition)"), so at least one direction needs a
+// strong (50%+) overlap of meaningful words (3+ letters).
+function overlapRatio(tokensA, tokensB) {
+  if (tokensA.length === 0) return 0;
+  const matched = tokensA.filter((t) => tokensB.indexOf(t) !== -1).length;
+  return matched / tokensA.length;
+}
+
+function isRelevantTiltforumsMatch(machineName, candidateTitle) {
   const mTokens = tokens(machineName).filter((t) => t.length >= 3);
-  if (mTokens.length === 0) return false;
-  const tTokens = tokens(topicTitle || "");
-  const matched = mTokens.filter((t) => tTokens.indexOf(t) !== -1).length;
-  return matched / mTokens.length >= 0.5;
+  const cTokens = tokens(candidateTitle || "").filter((t) => t.length >= 3);
+  if (mTokens.length === 0 || cTokens.length === 0) return false;
+  return overlapRatio(mTokens, cTokens) >= 0.5 || overlapRatio(cTokens, mTokens) >= 0.5;
 }
 
 function pickRelevantTopic(machineName, topics) {
@@ -79,25 +153,22 @@ function pickRelevantTopic(machineName, topics) {
   return null;
 }
 
-// Uses Discourse's public search endpoint (the same one that powers the
-// site's own search bar) to find the most relevant rulesheet topic for a
-// machine, restricted to the Wiki Rulesheets category so we don't
-// accidentally link to an unrelated general-discussion thread. Falls back
-// to an unrestricted search if the category-scoped one finds nothing, and
-// rejects results that don't actually seem to be about this machine.
-async function findTiltforumsUrl(machineName) {
-  async function search(query) {
-    const url = `${TILTFORUMS_BASE}/search.json?q=${encodeURIComponent(query)}`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`TiltForums search -> HTTP ${res.status}`);
-    return res.json();
+function findInMasterList(machineName, masterListEntries) {
+  for (const entry of masterListEntries) {
+    if (isRelevantTiltforumsMatch(machineName, entry.name)) return entry.url;
   }
+  return null;
+}
 
+// Fallback for machines not found in the master list — searches
+// TiltForums directly, restricted to the Wiki Rulesheets category first,
+// falling back to an unrestricted search, and rejecting irrelevant results.
+async function searchTiltforumsUrl(machineName) {
   try {
-    let data = await search(`${machineName} rulesheet #game-specific:rulesheet-wikis`);
+    let data = await tiltforumsSearch(`${machineName} rulesheet #game-specific:rulesheet-wikis`);
     if (!tiltforumsDebugged) {
       console.log("---- FIRST RAW TILTFORUMS SEARCH RESPONSE (for field-mapping check) ----");
-      console.log(JSON.stringify(data, null, 2).slice(0, 2000));
+      console.log(JSON.stringify(data, null, 2).slice(0, 3000));
       console.log("---- end raw response ----");
       tiltforumsDebugged = true;
     }
@@ -106,9 +177,8 @@ async function findTiltforumsUrl(machineName) {
     let top = pickRelevantTopic(machineName, topics);
 
     if (!top) {
-      // Category filter may have found nothing relevant — try again
-      // without restricting to the category.
-      data = await search(`${machineName} rulesheet`);
+      await sleep(1500);
+      data = await tiltforumsSearch(`${machineName} rulesheet`);
       topics = (data && data.topics) || [];
       top = pickRelevantTopic(machineName, topics);
     }
@@ -298,13 +368,39 @@ async function main() {
     }
   }
 
-  console.log(`\nSearching TiltForums for a rulesheet per machine...`);
-  for (const m of machines) {
-    m.tiltforumsUrl = await findTiltforumsUrl(m.name);
-    await new Promise((r) => setTimeout(r, 200));
+  console.log(`\nFetching TiltForums Rulesheet Master List...`);
+  let masterList = [];
+  try {
+    masterList = await fetchRulesheetMasterList();
+  } catch (err) {
+    console.warn(`Could not fetch the Master List, will rely on search only: ${err.message}`);
   }
-  const resolvedCount = machines.filter((m) => m.tiltforumsUrl).length;
-  console.log(`Resolved TiltForums links for ${resolvedCount} of ${machines.length} machines.`);
+
+  console.log(`\nMatching machines against known rulesheet sources...`);
+  for (const m of machines) {
+    // Silverball Mania covers ~1960s-mid1980s machines via direct OPDB ID
+    // lookup — try it first for older machines, since it's a deterministic
+    // ID match rather than a name-based guess.
+    if (m.manufactureYear && m.manufactureYear < 1986 && m.opdbId) {
+      const silverballUrl = await checkSilverballManiaUrl(m.opdbId);
+      if (silverballUrl) {
+        m.rulesheetUrl = silverballUrl;
+        await sleep(500);
+        continue;
+      }
+      await sleep(500);
+    }
+
+    const masterMatch = findInMasterList(m.name, masterList);
+    if (masterMatch) {
+      m.rulesheetUrl = masterMatch;
+      continue;
+    }
+    m.rulesheetUrl = await searchTiltforumsUrl(m.name);
+    await sleep(3000);
+  }
+  const resolvedCount = machines.filter((m) => m.rulesheetUrl).length;
+  console.log(`Resolved rulesheet links for ${resolvedCount} of ${machines.length} machines.`);
 
   const output = {
     sourceName: latest.name,
