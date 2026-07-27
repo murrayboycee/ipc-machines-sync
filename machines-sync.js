@@ -133,6 +133,16 @@ async function tiltforumsSearch(query) {
 // 66") while our machine name is a specific edition ("Batman 66
 // (Catwoman Signature Edition)"), so at least one direction needs a
 // strong (50%+) overlap of meaningful words (3+ letters).
+// Common short words that shouldn't count as "meaningful" overlap even
+// though they clear the 3-letter length filter — "the" is exactly 3
+// letters and was previously letting "The Party Zone" match "The
+// Mandalorian" at exactly the 50% threshold on that word alone.
+const STOPWORDS = new Set(["the", "and", "for", "with", "from"]);
+
+function meaningfulTokens(name) {
+  return tokens(name).filter((t) => t.length >= 3 && !STOPWORDS.has(t));
+}
+
 function overlapRatio(tokensA, tokensB) {
   if (tokensA.length === 0) return 0;
   const matched = tokensA.filter((t) => tokensB.indexOf(t) !== -1).length;
@@ -140,8 +150,8 @@ function overlapRatio(tokensA, tokensB) {
 }
 
 function isRelevantTiltforumsMatch(machineName, candidateTitle) {
-  const mTokens = tokens(machineName).filter((t) => t.length >= 3);
-  const cTokens = tokens(candidateTitle || "").filter((t) => t.length >= 3);
+  const mTokens = meaningfulTokens(machineName);
+  const cTokens = meaningfulTokens(candidateTitle || "");
   if (mTokens.length === 0 || cTokens.length === 0) return false;
   return overlapRatio(mTokens, cTokens) >= 0.5 || overlapRatio(cTokens, mTokens) >= 0.5;
 }
