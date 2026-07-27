@@ -100,10 +100,10 @@ async function main() {
     // Strictly in the past — today itself doesn't count — and no more
     // than 10 days ago.
     const daysAgo = (new Date(today).getTime() - new Date(d).getTime()) / (1000 * 60 * 60 * 24);
-    return daysAgo > 0 && daysAgo <= 10;
+    return daysAgo > 0 && daysAgo <= 14;
   });
 
-  console.log(`Eligible qualifier tournaments (Monday/Tuesday League or Pinawarra, 1-10 days ago): ${candidates.length}`);
+  console.log(`Eligible qualifier tournaments (Monday/Tuesday League or Pinawarra, 1-14 days ago): ${candidates.length}`);
 
   function daysAgo(mt) {
     const d = toIsoDate(mt.startLocal || mt.startUtc || "");
@@ -119,7 +119,7 @@ async function main() {
   }
 
   if (candidates.length === 0) {
-    console.error("No eligible tournaments found in the past 10 days — cannot build machines.json.");
+    console.error("No eligible tournaments found in the past 14 days — cannot build machines.json.");
     process.exit(1);
   }
 
