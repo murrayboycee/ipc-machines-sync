@@ -94,22 +94,24 @@ async function main() {
     const isPinawarra = n.length > 0 && n[0] === "pinawarra";
     if (!isMondayLeague && !isTuesdayLeague && !isPinawarra) return false;
 
-    const isPast = mt.status === "completed" || toIsoDate(mt.startLocal || mt.startUtc || "") <= today;
-    return isPast;
+    // Must actually have a date to compare against "today".
+    return !!toIsoDate(mt.startLocal || mt.startUtc || "");
   });
 
-  console.log(`Eligible past qualifier tournaments (Monday/Tuesday League or Pinawarra): ${candidates.length}`);
+  console.log(`Eligible qualifier tournaments (Monday/Tuesday League or Pinawarra, any date): ${candidates.length}`);
+
+  function daysFromToday(mt) {
+    const d = toIsoDate(mt.startLocal || mt.startUtc || "");
+    return Math.abs((new Date(d).getTime() - new Date(today).getTime()) / (1000 * 60 * 60 * 24));
+  }
+
   if (candidates.length > 0) {
     const preview = candidates
       .slice()
-      .sort((a, b) => {
-        const da = toIsoDate(a.startLocal || a.startUtc || "");
-        const db = toIsoDate(b.startLocal || b.startUtc || "");
-        return da < db ? 1 : -1;
-      })
+      .sort((a, b) => daysFromToday(a) - daysFromToday(b))
       .slice(0, 5);
-    console.log("Most recent 5 candidates:");
-    preview.forEach((mt) => console.log(`  - ${mt.name} | ${toIsoDate(mt.startLocal || mt.startUtc || "")} | status: ${mt.status} | type: ${mt.type}`));
+    console.log("Closest 5 candidates to today:");
+    preview.forEach((mt) => console.log(`  - ${mt.name} | ${toIsoDate(mt.startLocal || mt.startUtc || "")} | ${daysFromToday(mt).toFixed(0)} day(s) from today | status: ${mt.status}`));
   }
 
   if (candidates.length === 0) {
@@ -117,11 +119,7 @@ async function main() {
     process.exit(1);
   }
 
-  candidates.sort((a, b) => {
-    const da = toIsoDate(a.startLocal || a.startUtc || "");
-    const db = toIsoDate(b.startLocal || b.startUtc || "");
-    return da < db ? 1 : -1;
-  });
+  candidates.sort((a, b) => daysFromToday(a) - daysFromToday(b));
 
   const latest = candidates[0];
   console.log(`\nPulling machine list from: "${latest.name}" (${toIsoDate(latest.startLocal || latest.startUtc || "")}, tournamentId: ${latest.tournamentId})`);
