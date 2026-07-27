@@ -12,7 +12,7 @@
     },
     {
       "name": "Black Knight",
-      "active": true
+      "active": false
     },
     {
       "name": "Card Whiz",
@@ -20,7 +20,7 @@
     },
     {
       "name": "Deadpool (Pro)",
-      "active": false
+      "active": true
     },
     {
       "name": "Dennis Lillee's Howzat!",
