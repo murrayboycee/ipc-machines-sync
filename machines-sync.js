@@ -94,32 +94,36 @@ async function main() {
     const isPinawarra = n.length > 0 && n[0] === "pinawarra";
     if (!isMondayLeague && !isTuesdayLeague && !isPinawarra) return false;
 
-    // Must actually have a date to compare against "today".
-    return !!toIsoDate(mt.startLocal || mt.startUtc || "");
+    const d = toIsoDate(mt.startLocal || mt.startUtc || "");
+    if (!d) return false;
+
+    // Strictly in the past — today itself doesn't count — and no more
+    // than 10 days ago.
+    const daysAgo = (new Date(today).getTime() - new Date(d).getTime()) / (1000 * 60 * 60 * 24);
+    return daysAgo > 0 && daysAgo <= 10;
   });
 
-  console.log(`Eligible qualifier tournaments (Monday/Tuesday League or Pinawarra, any date): ${candidates.length}`);
+  console.log(`Eligible qualifier tournaments (Monday/Tuesday League or Pinawarra, 1-10 days ago): ${candidates.length}`);
 
-  function daysFromToday(mt) {
+  function daysAgo(mt) {
     const d = toIsoDate(mt.startLocal || mt.startUtc || "");
-    return Math.abs((new Date(d).getTime() - new Date(today).getTime()) / (1000 * 60 * 60 * 24));
+    return (new Date(today).getTime() - new Date(d).getTime()) / (1000 * 60 * 60 * 24);
   }
 
   if (candidates.length > 0) {
     const preview = candidates
       .slice()
-      .sort((a, b) => daysFromToday(a) - daysFromToday(b))
-      .slice(0, 5);
-    console.log("Closest 5 candidates to today:");
-    preview.forEach((mt) => console.log(`  - ${mt.name} | ${toIsoDate(mt.startLocal || mt.startUtc || "")} | ${daysFromToday(mt).toFixed(0)} day(s) from today | status: ${mt.status}`));
+      .sort((a, b) => daysAgo(a) - daysAgo(b));
+    console.log("Candidates (most recent first):");
+    preview.forEach((mt) => console.log(`  - ${mt.name} | ${toIsoDate(mt.startLocal || mt.startUtc || "")} | ${daysAgo(mt).toFixed(0)} day(s) ago | status: ${mt.status}`));
   }
 
   if (candidates.length === 0) {
-    console.error("No eligible tournaments found — cannot build machines.json.");
+    console.error("No eligible tournaments found in the past 10 days — cannot build machines.json.");
     process.exit(1);
   }
 
-  candidates.sort((a, b) => daysFromToday(a) - daysFromToday(b));
+  candidates.sort((a, b) => daysAgo(a) - daysAgo(b));
 
   const latest = candidates[0];
   console.log(`\nPulling machine list from: "${latest.name}" (${toIsoDate(latest.startLocal || latest.startUtc || "")}, tournamentId: ${latest.tournamentId})`);
