@@ -57,6 +57,48 @@ async function opdbGet(opdbId) {
   return res.json();
 }
 
+const TILTFORUMS_BASE = "https://tiltforums.com";
+let tiltforumsDebugged = false;
+
+// Uses Discourse's public search endpoint (the same one that powers the
+// site's own search bar) to find the most relevant rulesheet topic for a
+// machine, restricted to the Wiki Rulesheets category so we don't
+// accidentally link to an unrelated general-discussion thread. Falls back
+// to an unrestricted search if the category-scoped one finds nothing.
+async function findTiltforumsUrl(machineName) {
+  async function search(query) {
+    const url = `${TILTFORUMS_BASE}/search.json?q=${encodeURIComponent(query)}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`TiltForums search -> HTTP ${res.status}`);
+    return res.json();
+  }
+
+  try {
+    let data = await search(`${machineName} rulesheet #game-specific:rulesheet-wikis`);
+    if (!tiltforumsDebugged) {
+      console.log("---- FIRST RAW TILTFORUMS SEARCH RESPONSE (for field-mapping check) ----");
+      console.log(JSON.stringify(data, null, 2).slice(0, 2000));
+      console.log("---- end raw response ----");
+      tiltforumsDebugged = true;
+    }
+
+    let topics = (data && data.topics) || [];
+    if (topics.length === 0) {
+      // Category filter may have found nothing — try an unrestricted search.
+      data = await search(`${machineName} rulesheet`);
+      topics = (data && data.topics) || [];
+    }
+    if (topics.length === 0) return null;
+
+    const top = topics[0];
+    if (!top.slug || !top.id) return null;
+    return `${TILTFORUMS_BASE}/t/${top.slug}/${top.id}`;
+  } catch (err) {
+    console.warn(`  Could not search TiltForums for "${machineName}": ${err.message}`);
+    return null;
+  }
+}
+
 // Buckets machines into a rough era based on manufacture year. Adjust
 // the cutoffs here if you'd rather draw the lines differently.
 function classifyEra(year) {
@@ -230,6 +272,14 @@ async function main() {
       await new Promise((r) => setTimeout(r, 150));
     }
   }
+
+  console.log(`\nSearching TiltForums for a rulesheet per machine...`);
+  for (const m of machines) {
+    m.tiltforumsUrl = await findTiltforumsUrl(m.name);
+    await new Promise((r) => setTimeout(r, 200));
+  }
+  const resolvedCount = machines.filter((m) => m.tiltforumsUrl).length;
+  console.log(`Resolved TiltForums links for ${resolvedCount} of ${machines.length} machines.`);
 
   const output = {
     sourceName: latest.name,
