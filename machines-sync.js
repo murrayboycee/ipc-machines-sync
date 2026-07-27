@@ -65,6 +65,40 @@ async function checkSilverballManiaUrl(opdbId) {
   }
 }
 
+const PINBALL_PRIMER_BASE = "https://pinballprimer.github.io";
+const PINBALL_PRIMER_REPO_TREE_URL =
+  "https://api.github.com/repos/pinballprimer/pinballprimer.github.io/git/trees/main?recursive=1";
+
+// Pinball Primer's page filenames encode the OPDB GROUP id, e.g.
+// "avengersiq_Gj66P.html" for group "Gj66P" — this is a real, exact
+// identifier match (not a name guess), same reliability tier as
+// Silverball Mania. Fetches the repo's full file list once via GitHub's
+// API and builds a groupId -> URL map.
+async function fetchPinballPrimerIndex() {
+  const res = await fetch(PINBALL_PRIMER_REPO_TREE_URL);
+  if (!res.ok) throw new Error(`Pinball Primer repo tree fetch -> HTTP ${res.status}`);
+  const data = await res.json();
+  const tree = data.tree || [];
+
+  const index = {};
+  const filenameRegex = /^([^/]+)_([A-Za-z0-9]+)\.html$/;
+  for (const entry of tree) {
+    if (entry.type !== "blob") continue;
+    const match = entry.path.match(filenameRegex);
+    if (!match) continue;
+    const groupId = match[2];
+    index[groupId] = `${PINBALL_PRIMER_BASE}/${entry.path}`;
+  }
+  console.log(`Parsed ${Object.keys(index).length} Pinball Primer pages (indexed by OPDB group ID).`);
+  return index;
+}
+
+function findPinballPrimerUrl(opdbId, primerIndex) {
+  if (!opdbId) return null;
+  const groupId = opdbId.split("-")[0];
+  return primerIndex[groupId] || null;
+}
+
 async function opdbGet(opdbId) {
   const url = `${OPDB_BASE}/api/machines/${encodeURIComponent(opdbId)}?api_token=${OPDB_API_TOKEN}`;
   const res = await fetch(url);
@@ -399,31 +433,40 @@ async function main() {
     console.warn(`Could not fetch the Master List, will rely on search only: ${err.message}`);
   }
 
-  console.log(`\nMatching machines against known rulesheet sources...`);
+  console.log(`\nFetching Pinball Primer index...`);
+  let primerIndex = {};
+  try {
+    primerIndex = await fetchPinballPrimerIndex();
+  } catch (err) {
+    console.warn(`Could not fetch the Pinball Primer index: ${err.message}`);
+  }
+
+  console.log(`\nMatching machines against all known rulesheet sources...`);
   for (const m of machines) {
-    // Silverball Mania covers ~1960s-mid1980s machines via direct OPDB ID
-    // lookup — try it first for older machines, since it's a deterministic
-    // ID match rather than a name-based guess.
+    // Silverball Mania: deterministic ID lookup, ~1960s-mid1980s coverage.
+    m.silverballManiaUrl = null;
     if (m.manufactureYear && m.manufactureYear < 1986 && m.opdbId) {
-      const silverballUrl = await checkSilverballManiaUrl(m.opdbId);
-      if (silverballUrl) {
-        m.rulesheetUrl = silverballUrl;
-        await sleep(500);
-        continue;
-      }
+      m.silverballManiaUrl = await checkSilverballManiaUrl(m.opdbId);
       await sleep(500);
     }
 
+    // Pinball Primer: deterministic ID lookup via the pre-fetched index —
+    // no extra network request per machine.
+    m.pinballPrimerUrl = findPinballPrimerUrl(m.opdbId, primerIndex);
+
+    // TiltForums: master list first (curated, no rate limit), falling
+    // back to live search (rate-limit-safe, relevance-checked) only if
+    // the master list doesn't cover this machine.
     const masterMatch = findInMasterList(m.name, masterList);
     if (masterMatch) {
-      m.rulesheetUrl = masterMatch;
-      continue;
+      m.tiltforumsUrl = masterMatch;
+    } else {
+      m.tiltforumsUrl = await searchTiltforumsUrl(m.name);
+      await sleep(3000);
     }
-    m.rulesheetUrl = await searchTiltforumsUrl(m.name);
-    await sleep(3000);
   }
-  const resolvedCount = machines.filter((m) => m.rulesheetUrl).length;
-  console.log(`Resolved rulesheet links for ${resolvedCount} of ${machines.length} machines.`);
+  const resolvedCount = machines.filter((m) => m.silverballManiaUrl || m.pinballPrimerUrl || m.tiltforumsUrl).length;
+  console.log(`Resolved at least one rulesheet source for ${resolvedCount} of ${machines.length} machines.`);
 
   const output = {
     sourceName: latest.name,
