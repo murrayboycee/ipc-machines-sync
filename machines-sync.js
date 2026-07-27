@@ -94,13 +94,26 @@ async function fetchRulesheetMasterList() {
   const res = await fetch(RULESHEET_MASTER_LIST_URL);
   if (!res.ok) throw new Error(`Master list fetch -> HTTP ${res.status}`);
   const html = await res.text();
-  const linkRegex = /<a\s+href="(https?:\/\/(?:www\.)?tiltforums\.com\/t\/[^"]+)"[^>]*>([^<]+)<\/a>/gi;
+
+  // Match any <a ...>text</a> tag first, then pull href out of its
+  // attributes separately — this doesn't assume href is the first
+  // attribute or that it uses double quotes, since Discourse sometimes
+  // renders extra attributes (class, data-*, etc.) before href.
+  const anchorRegex = /<a\s+([^>]*)>([^<]*)<\/a>/gi;
   const entries = [];
   let match;
-  while ((match = linkRegex.exec(html)) !== null) {
-    const url = match[1].replace(/^http:/, "https:");
+  while ((match = anchorRegex.exec(html)) !== null) {
+    const attrs = match[1];
     const name = match[2].trim();
-    if (name) entries.push({ name, url });
+    if (!name) continue;
+
+    const hrefMatch = attrs.match(/href\s*=\s*"([^"]+)"/i) || attrs.match(/href\s*=\s*'([^']+)'/i);
+    if (!hrefMatch) continue;
+
+    const href = hrefMatch[1];
+    if (!/^https?:\/\/(www\.)?tiltforums\.com\/t\//i.test(href)) continue;
+
+    entries.push({ name, url: href.replace(/^http:/, "https:") });
   }
   console.log(`Parsed ${entries.length} rulesheet links from the Master List.`);
   return entries;
