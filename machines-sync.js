@@ -197,7 +197,6 @@ async function main() {
     for (const m of machines) {
       if (!m.opdbId) {
         m.era = null;
-        delete m.opdbId;
         continue;
       }
       try {
@@ -216,17 +215,20 @@ async function main() {
         m.type = info.type || null;
         m.display = info.display || null;
         m.playerCount = info.player_count || null;
+        m.ipdbId = info.ipdb_id || null;
+        // Use OPDB's own canonical opdb_id from the response (may resolve
+        // aliases differently than what Match Play originally gave us) —
+        // this is what powers the Match Play rules-sheet link.
+        m.opdbId = info.opdb_id || m.opdbId;
         const img = Array.isArray(info.images) && info.images.length > 0 ? info.images[0] : null;
         m.imageUrl = (img && img.urls && (img.urls.medium || img.urls.small)) || null;
       } catch (err) {
         console.warn(`  Could not look up OPDB info for "${m.name}" (${m.opdbId}): ${err.message}`);
         m.era = null;
+        m.opdbId = null;
       }
-      delete m.opdbId;
       await new Promise((r) => setTimeout(r, 150));
     }
-  } else {
-    machines.forEach((m) => { delete m.opdbId; });
   }
 
   const output = {
