@@ -1,0 +1,35 @@
+name: Sync Machine List
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run sync script
+        env:
+          MATCHPLAY_API_TOKEN: ${{ secrets.MATCHPLAY_API_TOKEN }}
+        run: node machines-sync.js
+
+      - name: Commit updated machines.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add machines.json
+          git diff --staged --quiet || git commit -m "Update machine list"
+          git pull --rebase origin main
+          git push
