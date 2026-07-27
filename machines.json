@@ -1,120 +1,29 @@
 {
-  "updatedAt": "2026-07-27",
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk1",
+  "sourceDate": "2026-07-27",
   "machines": [
     {
-      "name": "AC/DC (LE)",
-      "active": false
-    },
-    {
-      "name": "AC/DC (Pro)",
-      "active": false
-    },
-    {
-      "name": "Aladdin's Castle",
-      "active": true
-    },
-    {
       "name": "Avengers: Infinity Quest (Pro)",
       "active": true
-    },
-    {
-      "name": "Avengers: Infinity Quest (Pro)",
-      "active": false
-    },
-    {
-      "name": "Barracora",
-      "active": true
-    },
-    {
-      "name": "Barracora",
-      "active": false
     },
     {
       "name": "Batman 66 (Catwoman Signature Edition)",
       "active": true
     },
     {
-      "name": "Batman 66 (Premium)",
-      "active": false
-    },
-    {
       "name": "Black Knight",
       "active": true
-    },
-    {
-      "name": "Black Knight",
-      "active": false
-    },
-    {
-      "name": "Black Knight 2000",
-      "active": false
-    },
-    {
-      "name": "Black Knight: Sword of Rage (Pro)",
-      "active": true
-    },
-    {
-      "name": "Black Knight: Sword of Rage (Pro)",
-      "active": false
-    },
-    {
-      "name": "Black water 100",
-      "active": false
     },
     {
       "name": "Blackout",
       "active": true
     },
     {
-      "name": "Blackwater 100",
-      "active": false
-    },
-    {
-      "name": "Bram Stoker's Dracula",
-      "active": false
-    },
-    {
       "name": "Card Whiz",
       "active": true
     },
     {
-      "name": "Catacomb",
-      "active": false
-    },
-    {
-      "name": "Centaur",
-      "active": true
-    },
-    {
-      "name": "Creature from the Black Lagoon",
-      "active": true
-    },
-    {
-      "name": "Cyclone",
-      "active": true
-    },
-    {
-      "name": "Dark Rider",
-      "active": false
-    },
-    {
-      "name": "Deadpool (Premium)",
-      "active": false
-    },
-    {
       "name": "Deadpool (Pro)",
-      "active": true
-    },
-    {
-      "name": "Deadpool (Pro)",
-      "active": false
-    },
-    {
-      "name": "Deadpool (Pro)",
-      "active": false
-    },
-    {
-      "name": "Defender",
       "active": false
     },
     {
@@ -122,127 +31,7 @@
       "active": true
     },
     {
-      "name": "Diner",
-      "active": true
-    },
-    {
-      "name": "Diner",
-      "active": false
-    },
-    {
-      "name": "Diner",
-      "active": false
-    },
-    {
-      "name": "Doctor Who",
-      "active": false
-    },
-    {
-      "name": "Dungeons & Dragons",
-      "active": false
-    },
-    {
-      "name": "Eight Ball Deluxe",
-      "active": true
-    },
-    {
-      "name": "Elton John",
-      "active": false
-    },
-    {
-      "name": "Elton John",
-      "active": false
-    },
-    {
-      "name": "Elton John (CE)",
-      "active": true
-    },
-    {
-      "name": "Firepower",
-      "active": true
-    },
-    {
-      "name": "Firepower",
-      "active": false
-    },
-    {
-      "name": "Firepower II",
-      "active": true
-    },
-    {
       "name": "Fish Tales",
-      "active": true
-    },
-    {
-      "name": "Fish Tales",
-      "active": false
-    },
-    {
-      "name": "FJ",
-      "active": false
-    },
-    {
-      "name": "Flash Gordon",
-      "active": true
-    },
-    {
-      "name": "Foo Fighters",
-      "active": false
-    },
-    {
-      "name": "Foo Fighters (Pro)",
-      "active": false
-    },
-    {
-      "name": "Frontier",
-      "active": true
-    },
-    {
-      "name": "Funhouse",
-      "active": false
-    },
-    {
-      "name": "Game of Thrones (Premium)",
-      "active": false
-    },
-    {
-      "name": "Game Of Thrones (Pro)",
-      "active": false
-    },
-    {
-      "name": "Getaway",
-      "active": true
-    },
-    {
-      "name": "Ghostbusters (Pro)",
-      "active": false
-    },
-    {
-      "name": "Godzilla (LE)",
-      "active": false
-    },
-    {
-      "name": "Godzilla (Pro)",
-      "active": false
-    },
-    {
-      "name": "Godzilla (Pro)",
-      "active": false
-    },
-    {
-      "name": "Grand Lizard",
-      "active": true
-    },
-    {
-      "name": "Guardians of the Galaxy",
-      "active": false
-    },
-    {
-      "name": "Guardians of the Galaxy",
-      "active": false
-    },
-    {
-      "name": "Guns N' Roses (LE)",
       "active": true
     },
     {
@@ -250,187 +39,19 @@
       "active": true
     },
     {
-      "name": "Haunted House",
-      "active": false
-    },
-    {
-      "name": "High Speed",
-      "active": false
-    },
-    {
-      "name": "Hurricane",
-      "active": false
-    },
-    {
-      "name": "Iron Maiden",
-      "active": false
-    },
-    {
-      "name": "Iron Maiden: Legacy of the Beast",
-      "active": true
-    },
-    {
-      "name": "Iron Maiden: Legacy of the Beast (Premium)",
-      "active": false
-    },
-    {
-      "name": "Iron Maiden: Legacy of the Beast (Premium)",
-      "active": false
-    },
-    {
-      "name": "Jacks Open",
-      "active": false
-    },
-    {
       "name": "James Bond 007 (Pro)",
       "active": true
-    },
-    {
-      "name": "James Bond 007 (Pro)",
-      "active": false
-    },
-    {
-      "name": "JAWS (LE)",
-      "active": false
     },
     {
       "name": "JAWS (Pro)",
       "active": true
     },
     {
-      "name": "Jaws Pro",
-      "active": false
-    },
-    {
-      "name": "John Wick (LE)",
-      "active": false
-    },
-    {
-      "name": "John Wick (Premium)",
-      "active": true
-    },
-    {
-      "name": "Johnny Mnemonic",
-      "active": true
-    },
-    {
-      "name": "Johnny Mnemonic",
-      "active": false
-    },
-    {
-      "name": "Joker Poker",
-      "active": true
-    },
-    {
-      "name": "Joker Poker (EM)",
-      "active": true
-    },
-    {
-      "name": "Judge Dredd",
-      "active": false
-    },
-    {
-      "name": "Jurassic Park",
-      "active": false
-    },
-    {
-      "name": "Jurassic Park (Premium/LE)",
-      "active": false
-    },
-    {
       "name": "King Kong: Myth of Terror Island (Premium)",
       "active": true
     },
     {
-      "name": "King Kong: Myth of Terror Island (Pro)",
-      "active": true
-    },
-    {
-      "name": "KISS",
-      "active": false
-    },
-    {
-      "name": "Led Zeppelin (Premium)",
-      "active": false
-    },
-    {
-      "name": "Legends of Valhalla",
-      "active": false
-    },
-    {
-      "name": "Lost World",
-      "active": false
-    },
-    {
-      "name": "Medieval Madness",
-      "active": true
-    },
-    {
-      "name": "Medieval Madness (Remake LE)",
-      "active": true
-    },
-    {
-      "name": "Medieval Madness (Remake)",
-      "active": false
-    },
-    {
-      "name": "Memory Lane",
-      "active": false
-    },
-    {
-      "name": "Memory Lane",
-      "active": false
-    },
-    {
-      "name": "Metallica (Pro LED)",
-      "active": false
-    },
-    {
-      "name": "Metallica (Pro)",
-      "active": true
-    },
-    {
-      "name": "Meteor",
-      "active": false
-    },
-    {
-      "name": "Mousin' Around!",
-      "active": true
-    },
-    {
-      "name": "Nugent",
-      "active": false
-    },
-    {
-      "name": "Orbit",
-      "active": false
-    },
-    {
-      "name": "Paragon",
-      "active": true
-    },
-    {
-      "name": "Paragon",
-      "active": false
-    },
-    {
-      "name": "Pinball Champ",
-      "active": false
-    },
-    {
       "name": "Pulp Fiction",
-      "active": true
-    },
-    {
-      "name": "Pulp Fiction (SE)",
-      "active": false
-    },
-    {
-      "name": "Road Kings",
-      "active": false
-    },
-    {
-      "name": "Royal Flush",
       "active": true
     },
     {
@@ -438,148 +59,24 @@
       "active": true
     },
     {
-      "name": "Sharkey's Shootout",
-      "active": true
-    },
-    {
-      "name": "Sinbad",
-      "active": false
-    },
-    {
       "name": "Sinbad (EM)",
       "active": true
-    },
-    {
-      "name": "South Park",
-      "active": true
-    },
-    {
-      "name": "Space Invaders",
-      "active": false
-    },
-    {
-      "name": "Spider-Man (Black Suited LE)",
-      "active": false
     },
     {
       "name": "Star Trek (Pro)",
       "active": true
     },
     {
-      "name": "Star Trek: The Next Generation",
-      "active": true
-    },
-    {
-      "name": "Star Wars (LE)",
-      "active": false
-    },
-    {
-      "name": "Star Wars (Premium)",
-      "active": false
-    },
-    {
-      "name": "Star Wars: Fall of the Empire (Premium)",
-      "active": true
-    },
-    {
-      "name": "Stargate",
-      "active": false
-    },
-    {
-      "name": "Starship Troopers",
-      "active": true
-    },
-    {
-      "name": "Stranger Things (LE)",
-      "active": false
-    },
-    {
       "name": "Stranger Things (Pro)",
-      "active": true
-    },
-    {
-      "name": "Stranger Things (Pro)",
-      "active": false
-    },
-    {
-      "name": "Stranger Things (Pro)",
-      "active": false
-    },
-    {
-      "name": "Strikes and Spares",
-      "active": true
-    },
-    {
-      "name": "Surf Champ",
-      "active": true
-    },
-    {
-      "name": "Swords of Rage",
-      "active": false
-    },
-    {
-      "name": "Target Alpha",
-      "active": true
-    },
-    {
-      "name": "Target Alpha",
-      "active": false
-    },
-    {
-      "name": "Teenage Mutant Ninja Turtles",
-      "active": false
-    },
-    {
-      "name": "Terminator 2: Judgment Day",
       "active": true
     },
     {
       "name": "Terminator 2: Judgment Day",
-      "active": false
-    },
-    {
-      "name": "The Addams Family",
-      "active": false
-    },
-    {
-      "name": "The Avengers",
-      "active": false
-    },
-    {
-      "name": "The Beatles",
-      "active": false
-    },
-    {
-      "name": "The Getaway: High Speed II",
-      "active": false
-    },
-    {
-      "name": "The Godfather (LE)",
-      "active": false
-    },
-    {
-      "name": "The Mandalorian (LE)",
-      "active": false
-    },
-    {
-      "name": "The Mandalorian (Premium)",
-      "active": false
-    },
-    {
-      "name": "The Mandalorian (Pro)",
       "active": false
     },
     {
       "name": "The Party Zone",
       "active": true
-    },
-    {
-      "name": "The Simpsons",
-      "active": false
-    },
-    {
-      "name": "The Simpsons Pinball Party",
-      "active": false
     },
     {
       "name": "The Sopranos",
@@ -590,60 +87,8 @@
       "active": true
     },
     {
-      "name": "The Walking Dead Remastered (Premium)",
-      "active": true
-    },
-    {
-      "name": "The Who's Tommy Pinball Wizard",
-      "active": false
-    },
-    {
-      "name": "Time Machine",
-      "active": true
-    },
-    {
-      "name": "Twilight Zone",
-      "active": true
-    },
-    {
-      "name": "Twilight Zone",
-      "active": false
-    },
-    {
-      "name": "Venom (Pro)",
-      "active": true
-    },
-    {
-      "name": "Viper",
-      "active": false
-    },
-    {
-      "name": "Volley",
-      "active": true
-    },
-    {
-      "name": "White Water",
-      "active": true
-    },
-    {
-      "name": "Whitewater",
-      "active": true
-    },
-    {
-      "name": "Willy Wonka & The Chocolate Factory (LE)",
-      "active": true
-    },
-    {
-      "name": "World Cup Soccer",
-      "active": true
-    },
-    {
       "name": "WWF Royal Rumble",
       "active": true
-    },
-    {
-      "name": "Xenon",
-      "active": false
     }
   ]
 }
