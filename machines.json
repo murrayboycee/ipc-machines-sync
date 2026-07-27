@@ -6,49 +6,89 @@
       "name": "Avengers: Infinity Quest (Pro)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2020
+      "manufactureYear": 2020,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "lcd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/d985319a-a086-43bc-8ecb-889c3ebf8267-medium.jpg"
     },
     {
       "name": "Batman 66 (Catwoman Signature Edition)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2019
+      "manufactureYear": 2019,
+      "manufacturer": "Stern",
+      "type": null,
+      "display": null,
+      "playerCount": null,
+      "imageUrl": "https://img.opdb.org/db4ee2b0-50f1-43cd-ad00-5dfc50c9a269-medium.jpg"
     },
     {
       "name": "Black Knight",
       "active": false,
       "era": "Classic",
-      "manufactureYear": 1980
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/5004afa6-f71b-4acc-9080-13db4fd25045-medium.jpg"
     },
     {
       "name": "Card Whiz",
       "active": true,
       "era": "EM",
-      "manufactureYear": 1976
+      "manufactureYear": 1976,
+      "manufacturer": "Gottlieb",
+      "type": "em",
+      "display": "reels",
+      "playerCount": 2,
+      "imageUrl": "https://img.opdb.org/b1285db4-204d-4c02-b1be-91ba0a4a3869-medium.jpg"
     },
     {
       "name": "Deadpool (Pro)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2018
+      "manufactureYear": 2018,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "lcd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/4cb6b567-180c-4caf-83ab-159255de6061-medium.jpg"
     },
     {
       "name": "Dennis Lillee's Howzat!",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1980
+      "manufactureYear": 1980,
+      "manufacturer": "Hankin",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/53c6ae09-0185-4d5f-b75e-0f43a1d0f275-medium.jpg"
     },
     {
       "name": "Fish Tales",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1992
+      "manufactureYear": 1992,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg"
     },
     {
       "name": "Harlem Globetrotters On Tour",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1978
+      "manufactureYear": 1978,
+      "manufacturer": "Bally",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/6d886496-f132-44c5-94d3-43b76b3a1d05-medium.jpg"
     },
     {
       "name": "James Bond 007 (Pro)",
@@ -59,67 +99,122 @@
       "name": "JAWS (Pro)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2024
+      "manufactureYear": 2024,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "lcd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/80c09af9-aa5d-426d-8111-b5ab93e09cfb-medium.jpg"
     },
     {
       "name": "King Kong: Myth of Terror Island (Premium)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2025
+      "manufactureYear": 2025,
+      "manufacturer": "Stern",
+      "type": null,
+      "display": null,
+      "playerCount": null,
+      "imageUrl": "https://img.opdb.org/359b002f-0eac-4999-b582-67238bbeb9e5-medium.jpg"
     },
     {
       "name": "Pulp Fiction",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2023
+      "manufactureYear": 2023,
+      "manufacturer": "Chicago Gaming",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "imageUrl": null
     },
     {
       "name": "Seawitch",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1980
+      "manufactureYear": 1980,
+      "manufacturer": "Stern Electronics",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/c237ab44-1ad6-4abd-8915-a3b33c6422b4-medium.jpg"
     },
     {
       "name": "Sinbad (EM)",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1978
+      "manufactureYear": 1978,
+      "manufacturer": "Gottlieb",
+      "type": "em",
+      "display": "reels",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/37cebd38-c196-40d5-8fa5-5fb49d3a1c9f-medium.jpg"
     },
     {
       "name": "Star Trek (Pro)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2013
+      "manufactureYear": 2013,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/7c67e993-4c92-490a-9d84-f06edfdbcf80-medium.jpg"
     },
     {
       "name": "Stranger Things (Pro)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2019
+      "manufactureYear": 2019,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "lcd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/dd165916-0430-4bf1-8efe-278aa8ece1f3-medium.jpg"
     },
     {
       "name": "The Party Zone",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1991
+      "manufactureYear": 1991,
+      "manufacturer": "Bally",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/742fabd7-8074-4297-b0a4-13726ef293d2-medium.jpg"
     },
     {
       "name": "The Sopranos",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2005
+      "manufactureYear": 2005,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/5abbc2db-812a-41b7-a060-2c1cfc1ed768-medium.jpg"
     },
     {
       "name": "The Uncanny X-Men (Pro)",
       "active": true,
       "era": "Modern",
-      "manufactureYear": 2024
+      "manufactureYear": 2024,
+      "manufacturer": "Stern",
+      "type": "ss",
+      "display": "lcd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/0f18e457-0921-4b91-9243-010fad8065c7-medium.jpg"
     },
     {
       "name": "WWF Royal Rumble",
       "active": true,
       "era": "Classic",
-      "manufactureYear": 1994
+      "manufactureYear": 1994,
+      "manufacturer": "Data East",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "imageUrl": "https://img.opdb.org/a12b74c6-09e2-4866-9e70-fb58e418ea91-medium.jpg"
     }
   ]
 }
