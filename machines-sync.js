@@ -212,6 +212,12 @@ async function main() {
         const year = dateStr ? parseInt(dateStr.slice(0, 4), 10) : null;
         m.era = classifyEra(year);
         m.manufactureYear = year || null;
+        m.manufacturer = (info.manufacturer && info.manufacturer.name) || null;
+        m.type = info.type || null;
+        m.display = info.display || null;
+        m.playerCount = info.player_count || null;
+        const img = Array.isArray(info.images) && info.images.length > 0 ? info.images[0] : null;
+        m.imageUrl = (img && img.urls && (img.urls.medium || img.urls.small)) || null;
       } catch (err) {
         console.warn(`  Could not look up OPDB info for "${m.name}" (${m.opdbId}): ${err.message}`);
         m.era = null;
