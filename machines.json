@@ -13,7 +13,8 @@
       "display": "lcd",
       "playerCount": 4,
       "ipdbId": 6754,
-      "imageUrl": "https://img.opdb.org/d985319a-a086-43bc-8ecb-889c3ebf8267-medium.jpg"
+      "imageUrl": "https://img.opdb.org/d985319a-a086-43bc-8ecb-889c3ebf8267-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/avengers-infinity-quest-rulesheet/6740"
     },
     {
       "name": "Batman 66 (Catwoman Signature Edition)",
@@ -26,7 +27,8 @@
       "display": null,
       "playerCount": null,
       "ipdbId": null,
-      "imageUrl": "https://img.opdb.org/db4ee2b0-50f1-43cd-ad00-5dfc50c9a269-medium.jpg"
+      "imageUrl": "https://img.opdb.org/db4ee2b0-50f1-43cd-ad00-5dfc50c9a269-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Black Knight",
@@ -39,7 +41,8 @@
       "display": "alphanumeric",
       "playerCount": 4,
       "ipdbId": 310,
-      "imageUrl": "https://img.opdb.org/5004afa6-f71b-4acc-9080-13db4fd25045-medium.jpg"
+      "imageUrl": "https://img.opdb.org/5004afa6-f71b-4acc-9080-13db4fd25045-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Card Whiz",
@@ -52,7 +55,8 @@
       "display": "reels",
       "playerCount": 2,
       "ipdbId": 447,
-      "imageUrl": "https://img.opdb.org/b1285db4-204d-4c02-b1be-91ba0a4a3869-medium.jpg"
+      "imageUrl": "https://img.opdb.org/b1285db4-204d-4c02-b1be-91ba0a4a3869-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Deadpool (Pro)",
@@ -65,7 +69,8 @@
       "display": "lcd",
       "playerCount": 4,
       "ipdbId": 6558,
-      "imageUrl": "https://img.opdb.org/4cb6b567-180c-4caf-83ab-159255de6061-medium.jpg"
+      "imageUrl": "https://img.opdb.org/4cb6b567-180c-4caf-83ab-159255de6061-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/deadpool-rulesheet/4311"
     },
     {
       "name": "Dennis Lillee's Howzat!",
@@ -78,7 +83,8 @@
       "display": "alphanumeric",
       "playerCount": 4,
       "ipdbId": 3909,
-      "imageUrl": "https://img.opdb.org/53c6ae09-0185-4d5f-b75e-0f43a1d0f275-medium.jpg"
+      "imageUrl": "https://img.opdb.org/53c6ae09-0185-4d5f-b75e-0f43a1d0f275-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Fish Tales",
@@ -91,7 +97,8 @@
       "display": "dmd",
       "playerCount": 4,
       "ipdbId": 861,
-      "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg"
+      "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Harlem Globetrotters On Tour",
@@ -104,13 +111,15 @@
       "display": "alphanumeric",
       "playerCount": 4,
       "ipdbId": 1125,
-      "imageUrl": "https://img.opdb.org/6d886496-f132-44c5-94d3-43b76b3a1d05-medium.jpg"
+      "imageUrl": "https://img.opdb.org/6d886496-f132-44c5-94d3-43b76b3a1d05-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/points-for-extra-ball-wiki/2725"
     },
     {
       "name": "James Bond 007 (Pro)",
       "active": true,
       "opdbId": null,
-      "era": null
+      "era": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/james-bond-007-rulesheet/7893"
     },
     {
       "name": "JAWS (Pro)",
@@ -123,7 +132,8 @@
       "display": "lcd",
       "playerCount": 4,
       "ipdbId": null,
-      "imageUrl": "https://img.opdb.org/80c09af9-aa5d-426d-8111-b5ab93e09cfb-medium.jpg"
+      "imageUrl": "https://img.opdb.org/80c09af9-aa5d-426d-8111-b5ab93e09cfb-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "King Kong: Myth of Terror Island (Premium)",
@@ -136,7 +146,8 @@
       "display": null,
       "playerCount": null,
       "ipdbId": null,
-      "imageUrl": "https://img.opdb.org/359b002f-0eac-4999-b582-67238bbeb9e5-medium.jpg"
+      "imageUrl": "https://img.opdb.org/359b002f-0eac-4999-b582-67238bbeb9e5-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/king-kong-myth-of-terror-island-rulesheet/9514"
     },
     {
       "name": "Pulp Fiction",
@@ -149,7 +160,8 @@
       "display": "alphanumeric",
       "playerCount": 4,
       "ipdbId": null,
-      "imageUrl": null
+      "imageUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/pulp-fiction-rulesheet/8471"
     },
     {
       "name": "Seawitch",
@@ -162,7 +174,8 @@
       "display": "alphanumeric",
       "playerCount": 4,
       "ipdbId": 2089,
-      "imageUrl": "https://img.opdb.org/c237ab44-1ad6-4abd-8915-a3b33c6422b4-medium.jpg"
+      "imageUrl": "https://img.opdb.org/c237ab44-1ad6-4abd-8915-a3b33c6422b4-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Sinbad (EM)",
@@ -175,7 +188,8 @@
       "display": "reels",
       "playerCount": 4,
       "ipdbId": 4673,
-      "imageUrl": "https://img.opdb.org/37cebd38-c196-40d5-8fa5-5fb49d3a1c9f-medium.jpg"
+      "imageUrl": "https://img.opdb.org/37cebd38-c196-40d5-8fa5-5fb49d3a1c9f-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "Star Trek (Pro)",
@@ -188,7 +202,8 @@
       "display": "dmd",
       "playerCount": 4,
       "ipdbId": 6044,
-      "imageUrl": "https://img.opdb.org/7c67e993-4c92-490a-9d84-f06edfdbcf80-medium.jpg"
+      "imageUrl": "https://img.opdb.org/7c67e993-4c92-490a-9d84-f06edfdbcf80-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/star-trek-wiki/456"
     },
     {
       "name": "Stranger Things (Pro)",
@@ -201,7 +216,8 @@
       "display": "lcd",
       "playerCount": 4,
       "ipdbId": 6642,
-      "imageUrl": "https://img.opdb.org/dd165916-0430-4bf1-8efe-278aa8ece1f3-medium.jpg"
+      "imageUrl": "https://img.opdb.org/dd165916-0430-4bf1-8efe-278aa8ece1f3-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet/6093"
     },
     {
       "name": "The Party Zone",
@@ -214,7 +230,8 @@
       "display": "dmd",
       "playerCount": 4,
       "ipdbId": 1764,
-      "imageUrl": "https://img.opdb.org/742fabd7-8074-4297-b0a4-13726ef293d2-medium.jpg"
+      "imageUrl": "https://img.opdb.org/742fabd7-8074-4297-b0a4-13726ef293d2-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "The Sopranos",
@@ -227,7 +244,8 @@
       "display": "dmd",
       "playerCount": 4,
       "ipdbId": 5053,
-      "imageUrl": "https://img.opdb.org/5abbc2db-812a-41b7-a060-2c1cfc1ed768-medium.jpg"
+      "imageUrl": "https://img.opdb.org/5abbc2db-812a-41b7-a060-2c1cfc1ed768-medium.jpg",
+      "tiltforumsUrl": null
     },
     {
       "name": "The Uncanny X-Men (Pro)",
@@ -240,7 +258,8 @@
       "display": "lcd",
       "playerCount": 4,
       "ipdbId": null,
-      "imageUrl": "https://img.opdb.org/0f18e457-0921-4b91-9243-010fad8065c7-medium.jpg"
+      "imageUrl": "https://img.opdb.org/0f18e457-0921-4b91-9243-010fad8065c7-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/the-uncanny-x-men-rulesheet/9100"
     },
     {
       "name": "WWF Royal Rumble",
@@ -253,7 +272,8 @@
       "display": "dmd",
       "playerCount": 4,
       "ipdbId": 2820,
-      "imageUrl": "https://img.opdb.org/a12b74c6-09e2-4866-9e70-fb58e418ea91-medium.jpg"
+      "imageUrl": "https://img.opdb.org/a12b74c6-09e2-4866-9e70-fb58e418ea91-medium.jpg",
+      "tiltforumsUrl": "https://tiltforums.com/t/list-of-games-with-their-current-code-number-wiki/3615"
     }
   ]
 }
