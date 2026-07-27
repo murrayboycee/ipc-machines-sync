@@ -4,83 +4,123 @@
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2020
     },
     {
       "name": "Batman 66 (Catwoman Signature Edition)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2019
     },
     {
       "name": "Black Knight",
-      "active": false
+      "active": false,
+      "era": "Classic",
+      "manufactureYear": 1980
     },
     {
       "name": "Card Whiz",
-      "active": true
+      "active": true,
+      "era": "EM",
+      "manufactureYear": 1976
     },
     {
       "name": "Deadpool (Pro)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2018
     },
     {
       "name": "Dennis Lillee's Howzat!",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1980
     },
     {
       "name": "Fish Tales",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1992
     },
     {
       "name": "Harlem Globetrotters On Tour",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1978
     },
     {
       "name": "James Bond 007 (Pro)",
-      "active": true
+      "active": true,
+      "opdbId": null,
+      "era": null
     },
     {
       "name": "JAWS (Pro)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2024
     },
     {
       "name": "King Kong: Myth of Terror Island (Premium)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2025
     },
     {
       "name": "Pulp Fiction",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2023
     },
     {
       "name": "Seawitch",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1980
     },
     {
       "name": "Sinbad (EM)",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1978
     },
     {
       "name": "Star Trek (Pro)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2013
     },
     {
       "name": "Stranger Things (Pro)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2019
     },
     {
       "name": "The Party Zone",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1991
     },
     {
       "name": "The Sopranos",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2005
     },
     {
       "name": "The Uncanny X-Men (Pro)",
-      "active": true
+      "active": true,
+      "era": "Modern",
+      "manufactureYear": 2024
     },
     {
       "name": "WWF Royal Rumble",
-      "active": true
+      "active": true,
+      "era": "Classic",
+      "manufactureYear": 1994
     }
   ]
 }
