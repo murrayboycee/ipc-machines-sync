@@ -197,6 +197,7 @@ async function main() {
     for (const m of machines) {
       if (!m.opdbId) {
         m.era = null;
+        delete m.opdbId;
         continue;
       }
       try {
