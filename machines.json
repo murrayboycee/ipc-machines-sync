@@ -14,7 +14,9 @@
       "playerCount": 4,
       "ipdbId": 6754,
       "imageUrl": "https://img.opdb.org/d985319a-a086-43bc-8ecb-889c3ebf8267-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/avengers-infinity-quest-rulesheet/6740"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/avengers-infinity-quest-rulesheet/6740"
     },
     {
       "name": "Batman 66 (Catwoman Signature Edition)",
@@ -28,7 +30,9 @@
       "playerCount": null,
       "ipdbId": null,
       "imageUrl": "https://img.opdb.org/db4ee2b0-50f1-43cd-ad00-5dfc50c9a269-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/batman-66-rulesheet/2463"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/batman66_GRoz4.html",
+      "tiltforumsUrl": "https://tiltforums.com/t/batman-66-rulesheet/2463"
     },
     {
       "name": "Black Knight",
@@ -42,7 +46,9 @@
       "playerCount": 4,
       "ipdbId": 310,
       "imageUrl": "https://img.opdb.org/5004afa6-f71b-4acc-9080-13db4fd25045-medium.jpg",
-      "rulesheetUrl": "https://rules.silverballmania.com/rules/GrO7w-M9R03"
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrO7w-M9R03",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackknight_GrO7w.html",
+      "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
     },
     {
       "name": "Card Whiz",
@@ -56,7 +62,9 @@
       "playerCount": 2,
       "ipdbId": 447,
       "imageUrl": "https://img.opdb.org/b1285db4-204d-4c02-b1be-91ba0a4a3869-medium.jpg",
-      "rulesheetUrl": "https://rules.silverballmania.com/rules/GrEWx-MQPPX"
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrEWx-MQPPX",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/royalflush_GrEWx.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Deadpool (Pro)",
@@ -70,7 +78,9 @@
       "playerCount": 4,
       "ipdbId": 6558,
       "imageUrl": "https://img.opdb.org/4cb6b567-180c-4caf-83ab-159255de6061-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/deadpool-rulesheet/4311"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/deadpool-rulesheet/4311"
     },
     {
       "name": "Dennis Lillee's Howzat!",
@@ -84,7 +94,9 @@
       "playerCount": 4,
       "ipdbId": 3909,
       "imageUrl": "https://img.opdb.org/53c6ae09-0185-4d5f-b75e-0f43a1d0f275-medium.jpg",
-      "rulesheetUrl": "https://rules.silverballmania.com/rules/GRzz6-MJN6K"
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRzz6-MJN6K",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/howzat_GRzz6.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Fish Tales",
@@ -98,7 +110,9 @@
       "playerCount": 4,
       "ipdbId": 861,
       "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg",
-      "rulesheetUrl": null
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/fishtales_G5Wxd.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Harlem Globetrotters On Tour",
@@ -112,14 +126,18 @@
       "playerCount": 4,
       "ipdbId": 1125,
       "imageUrl": "https://img.opdb.org/6d886496-f132-44c5-94d3-43b76b3a1d05-medium.jpg",
-      "rulesheetUrl": "https://rules.silverballmania.com/rules/GRnwQ-M9R5d"
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRnwQ-M9R5d",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/harlem_GRnwQ.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "James Bond 007 (Pro)",
       "active": true,
       "opdbId": null,
       "era": null,
-      "rulesheetUrl": "https://tiltforums.com/t/007-60th-anniversary-rulesheet/8053"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/007-60th-anniversary-rulesheet/8053"
     },
     {
       "name": "JAWS (Pro)",
@@ -133,7 +151,9 @@
       "playerCount": 4,
       "ipdbId": null,
       "imageUrl": "https://img.opdb.org/80c09af9-aa5d-426d-8111-b5ab93e09cfb-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/jaws-rulesheet/8781"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/jaws-rulesheet/8781"
     },
     {
       "name": "King Kong: Myth of Terror Island (Premium)",
@@ -147,7 +167,9 @@
       "playerCount": null,
       "ipdbId": null,
       "imageUrl": "https://img.opdb.org/359b002f-0eac-4999-b582-67238bbeb9e5-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/king-kong-myth-of-terror-island-rulesheet/9514"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/king-kong-myth-of-terror-island-rulesheet/9514"
     },
     {
       "name": "Pulp Fiction",
@@ -161,7 +183,9 @@
       "playerCount": 4,
       "ipdbId": null,
       "imageUrl": null,
-      "rulesheetUrl": "https://tiltforums.com/t/pulp-fiction-rulesheet/8471"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/pulp-fiction-rulesheet/8471"
     },
     {
       "name": "Seawitch",
@@ -175,7 +199,9 @@
       "playerCount": 4,
       "ipdbId": 2089,
       "imageUrl": "https://img.opdb.org/c237ab44-1ad6-4abd-8915-a3b33c6422b4-medium.jpg",
-      "rulesheetUrl": "https://rules.silverballmania.com/rules/GR6kB-MDz81"
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GR6kB-MDz81",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/seawitch_GR6kB.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Sinbad (EM)",
@@ -189,7 +215,9 @@
       "playerCount": 4,
       "ipdbId": 4673,
       "imageUrl": "https://img.opdb.org/37cebd38-c196-40d5-8fa5-5fb49d3a1c9f-medium.jpg",
-      "rulesheetUrl": "https://rules.silverballmania.com/rules/G4xqN-ML3o5"
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/G4xqN-ML3o5",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/sinbad_G4xqN.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Star Trek (Pro)",
@@ -203,7 +231,9 @@
       "playerCount": 4,
       "ipdbId": 6044,
       "imageUrl": "https://img.opdb.org/7c67e993-4c92-490a-9d84-f06edfdbcf80-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/star-trek-wiki/456"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/star-trek-wiki/456"
     },
     {
       "name": "Stranger Things (Pro)",
@@ -217,7 +247,9 @@
       "playerCount": 4,
       "ipdbId": 6642,
       "imageUrl": "https://img.opdb.org/dd165916-0430-4bf1-8efe-278aa8ece1f3-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
     },
     {
       "name": "The Party Zone",
@@ -231,7 +263,9 @@
       "playerCount": 4,
       "ipdbId": 1764,
       "imageUrl": "https://img.opdb.org/742fabd7-8074-4297-b0a4-13726ef293d2-medium.jpg",
-      "rulesheetUrl": null
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/partyzone_G5oBw.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "The Sopranos",
@@ -245,7 +279,9 @@
       "playerCount": 4,
       "ipdbId": 5053,
       "imageUrl": "https://img.opdb.org/5abbc2db-812a-41b7-a060-2c1cfc1ed768-medium.jpg",
-      "rulesheetUrl": null
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/sopranos_G5WoB.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "The Uncanny X-Men (Pro)",
@@ -259,7 +295,9 @@
       "playerCount": 4,
       "ipdbId": null,
       "imageUrl": "https://img.opdb.org/0f18e457-0921-4b91-9243-010fad8065c7-medium.jpg",
-      "rulesheetUrl": "https://tiltforums.com/t/the-uncanny-x-men-rulesheet/9100"
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": "https://tiltforums.com/t/the-uncanny-x-men-rulesheet/9100"
     },
     {
       "name": "WWF Royal Rumble",
@@ -273,7 +311,9 @@
       "playerCount": 4,
       "ipdbId": 2820,
       "imageUrl": "https://img.opdb.org/a12b74c6-09e2-4866-9e70-fb58e418ea91-medium.jpg",
-      "rulesheetUrl": null
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/wwf_G57y6.html",
+      "tiltforumsUrl": null
     }
   ]
 }
