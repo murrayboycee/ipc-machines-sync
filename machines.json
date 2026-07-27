@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk1",
-  "sourceDate": "2026-07-27",
+  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 4 wk6",
+  "sourceDate": "2026-07-14",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -12,10 +12,6 @@
     },
     {
       "name": "Black Knight",
-      "active": true
-    },
-    {
-      "name": "Blackout",
       "active": true
     },
     {
@@ -69,10 +65,6 @@
     {
       "name": "Stranger Things (Pro)",
       "active": true
-    },
-    {
-      "name": "Terminator 2: Judgment Day",
-      "active": false
     },
     {
       "name": "The Party Zone",
