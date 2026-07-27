@@ -77,6 +77,19 @@ async function fetchAllMatchplayTournaments() {
 var ELIMINATION_TYPE_REGEX = /elimination|knockout/i;
 var NON_QUALIFIER_NAME_REGEX = /\bfinal(s)?\b|\bsemi(s)?(\s*final(s)?)?\b|\bquarter(s)?(\s*final(s)?)?\b|\btop\s*\d+\b|\bplay[\s-]?off(s)?\b|\bround of \d+\b|\bseeding\b|\bbest of the rest\b|\bwildcard\b|\bconsolation\b|\bplate\b|\btie[\s-]?breaker\b|\(?\s*\d+(st|nd|rd|th)?\s*-\s*\d+(st|nd|rd|th)\b\s*\)?/i;
 
+// Match Play's arena status for a small number of machines has proven
+// wrong across every tournament we've checked (not just one stale
+// snapshot — the same machines come back wrong regardless of which
+// recent tournament we pull from). That points to a duplicated/outdated
+// arena record on Match Play's side rather than a "picked the wrong
+// date" problem, so rather than keep guessing at the API, these are
+// hard-corrected here. Add a name (exact match) + the real current
+// status whenever you spot another one like this.
+var STATUS_OVERRIDES = {
+  "Deadpool (Pro)": true,
+  "Black Knight": false
+};
+
 async function main() {
   const today = toIsoDate(new Date().toISOString());
   console.log(`Today (for filtering out future tournaments): ${today}`);
@@ -145,6 +158,12 @@ async function main() {
       active: (a.status || "").toLowerCase() === "active"
     }))
     .filter((m) => m.name)
+    .map((m) => {
+      if (Object.prototype.hasOwnProperty.call(STATUS_OVERRIDES, m.name)) {
+        return { name: m.name, active: STATUS_OVERRIDES[m.name] };
+      }
+      return m;
+    })
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const output = {
