@@ -305,7 +305,9 @@ var NON_QUALIFIER_NAME_REGEX = /\bfinal(s)?\b|\bsemi(s)?(\s*final(s)?)?\b|\bquar
 // status whenever you spot another one like this.
 var STATUS_OVERRIDES = {
   "Deadpool (Pro)": true,
-  "Black Knight": false
+  "Black Knight": false,
+  "Blackout": false,
+  "Terminator 2: Judgment Day": false
 };
 
 async function main() {
