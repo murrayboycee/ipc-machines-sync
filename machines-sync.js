@@ -309,8 +309,13 @@ var STATUS_OVERRIDES = {
 };
 
 async function main() {
-  const today = toIsoDate(new Date().toISOString());
-  console.log(`Today (for filtering out future tournaments): ${today}`);
+  // Use Australia/Sydney local date, not UTC — the club runs on Australian
+  // time, and using UTC caused a real off-by-one-day bug: a run at
+  // 7:48am AEST on the 28th still reads as the 27th in UTC, which made a
+  // tournament that had genuinely already happened get misclassified as
+  // "today" and excluded by the strictly-in-the-past rule below.
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Sydney" }).format(new Date());
+  console.log(`Today (Australia/Sydney, for filtering out future tournaments): ${today}`);
 
   const all = await fetchAllMatchplayTournaments();
 
