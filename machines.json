@@ -52,7 +52,7 @@
     },
     {
       "name": "Blackout",
-      "active": true,
+      "active": false,
       "opdbId": "GRwYo-MQoPw",
       "era": "Classic",
       "manufactureYear": 1980,
