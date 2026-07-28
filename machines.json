@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 4 wk6",
-  "sourceDate": "2026-07-14",
+  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 5 wk1",
+  "sourceDate": "2026-07-28",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -49,6 +49,22 @@
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrO7w-M9R03",
       "pinballPrimerUrl": "https://pinballprimer.github.io/blackknight_GrO7w.html",
       "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
+    },
+    {
+      "name": "Blackout",
+      "active": true,
+      "opdbId": "GRwYo-MQoPw",
+      "era": "Classic",
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "ipdbId": 317,
+      "imageUrl": "https://img.opdb.org/7b614fdb-f92a-4106-ac78-9c35d8c43151-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwYo-MQoPw",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackout_GRwYo.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Card Whiz",
