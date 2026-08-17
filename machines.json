@@ -1,6 +1,6 @@
 {
-  "sourceName": "Pinawarra #39",
-  "sourceDate": "2026-08-07",
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk3",
+  "sourceDate": "2026-08-17",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -17,22 +17,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/avengers-infinity-quest-rulesheet/6740"
-    },
-    {
-      "name": "Barracora",
-      "active": true,
-      "opdbId": "GRo7K-MQ4e3",
-      "era": "Classic",
-      "manufactureYear": 1981,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 177,
-      "imageUrl": "https://img.opdb.org/74cc7208-ba23-42fb-82d4-039c2f84a1bf-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRo7K-MQ4e3",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/barracora_GRo7K.html",
-      "tiltforumsUrl": "https://tiltforums.com/t/barracora-williams-1981/485"
     },
     {
       "name": "Batman 66 (Catwoman Signature Edition)",
@@ -67,20 +51,20 @@
       "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
     },
     {
-      "name": "Black Knight: Sword of Rage (Pro)",
-      "active": true,
-      "opdbId": "GD7Ld-ME0BP",
-      "era": "Modern",
-      "manufactureYear": 2019,
-      "manufacturer": "Stern",
+      "name": "Blackout",
+      "active": false,
+      "opdbId": "GRwYo-MQoPw",
+      "era": "Classic",
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
       "type": "ss",
-      "display": "lcd",
+      "display": "alphanumeric",
       "playerCount": 4,
-      "ipdbId": 6567,
-      "imageUrl": "https://img.opdb.org/4a70ab88-b622-49ff-a3c7-2cd0715595bb-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
+      "ipdbId": 317,
+      "imageUrl": "https://img.opdb.org/7b614fdb-f92a-4106-ac78-9c35d8c43151-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwYo-MQoPw",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackout_GRwYo.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Card Whiz",
@@ -96,22 +80,6 @@
       "imageUrl": "https://img.opdb.org/b1285db4-204d-4c02-b1be-91ba0a4a3869-medium.jpg",
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrEWx-MQPPX",
       "pinballPrimerUrl": "https://pinballprimer.github.io/royalflush_GrEWx.html",
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "Creature from the Black Lagoon",
-      "active": true,
-      "opdbId": "GrNWn-MQdqZ",
-      "era": "Classic",
-      "manufactureYear": 1992,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "dmd",
-      "playerCount": 4,
-      "ipdbId": 588,
-      "imageUrl": "https://img.opdb.org/abb602b3-3e87-481b-b716-5c24cc032d1d-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/cftbl_GrNWn.html",
       "tiltforumsUrl": null
     },
     {
@@ -147,22 +115,6 @@
       "tiltforumsUrl": null
     },
     {
-      "name": "Eight Ball Deluxe",
-      "active": true,
-      "opdbId": "G5KXk-MLB9V",
-      "era": "Classic",
-      "manufactureYear": 1981,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 762,
-      "imageUrl": "https://img.opdb.org/fa289985-0b62-4116-a46d-38283589b107-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/G5KXk-MLB9V",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/ebd_G5KXk.html",
-      "tiltforumsUrl": null
-    },
-    {
       "name": "Firepower II",
       "active": true,
       "opdbId": "GRWYk-Mb5OV",
@@ -192,22 +144,6 @@
       "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg",
       "silverballManiaUrl": null,
       "pinballPrimerUrl": "https://pinballprimer.github.io/fishtales_G5Wxd.html",
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "Frontier",
-      "active": true,
-      "opdbId": "GRwjq-MJwrd",
-      "era": "Classic",
-      "manufactureYear": 1980,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 959,
-      "imageUrl": "https://img.opdb.org/de33b35d-decc-4766-9b05-ea590d036c8a-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwjq-MJwrd",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/frontier_GRwjq.html",
       "tiltforumsUrl": null
     },
     {
@@ -252,22 +188,6 @@
       "tiltforumsUrl": "https://tiltforums.com/t/jaws-rulesheet/8781"
     },
     {
-      "name": "John Wick (Premium)",
-      "active": true,
-      "opdbId": "GQK1P-Ml95Z-AOY43",
-      "era": "Modern",
-      "manufactureYear": 2024,
-      "manufacturer": "Stern",
-      "type": null,
-      "display": null,
-      "playerCount": null,
-      "ipdbId": null,
-      "imageUrl": "https://img.opdb.org/5f6a2daa-c083-45cd-8aa6-ef646e0208f8-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": "https://tiltforums.com/t/john-wick-rulesheet/8956"
-    },
-    {
       "name": "Johnny Mnemonic",
       "active": true,
       "opdbId": "GR6W8-Mb55B",
@@ -282,22 +202,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": "https://pinballprimer.github.io/johnnymnemonic_GR6W8.html",
       "tiltforumsUrl": null
-    },
-    {
-      "name": "Joker Poker (EM)",
-      "active": true,
-      "opdbId": "GR9o1-Mx0bX",
-      "era": "Classic",
-      "manufactureYear": 1978,
-      "manufacturer": "Gottlieb",
-      "type": "em",
-      "display": "reels",
-      "playerCount": 4,
-      "ipdbId": 5078,
-      "imageUrl": "https://img.opdb.org/7c8ca970-59b1-488a-a86f-dbb113e4a2e2-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GR9o1-Mx0bX",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/jokerpoker_GR9o1.html",
-      "tiltforumsUrl": "https://tiltforums.com/t/world-poker-tour-rulesheet/3858"
     },
     {
       "name": "King Kong: Myth of Terror Island (Premium)",
@@ -316,38 +220,6 @@
       "tiltforumsUrl": "https://tiltforums.com/t/king-kong-myth-of-terror-island-rulesheet/9514"
     },
     {
-      "name": "Metallica (Pro)",
-      "active": true,
-      "opdbId": "GRBE4-MQK1Z",
-      "era": "Modern",
-      "manufactureYear": 2013,
-      "manufacturer": "Stern",
-      "type": "ss",
-      "display": "dmd",
-      "playerCount": 4,
-      "ipdbId": 6028,
-      "imageUrl": "https://img.opdb.org/73b05a42-9dbe-460d-a710-7a01085b4911-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/metallica_GRBE4.html",
-      "tiltforumsUrl": "https://tiltforums.com/t/metallica-remastered-rulesheet/9298"
-    },
-    {
-      "name": "Paragon",
-      "active": true,
-      "opdbId": "GrXy3-ML0Ey",
-      "era": "Classic",
-      "manufactureYear": 1979,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 1755,
-      "imageUrl": "https://img.opdb.org/4730d2c7-6bbe-4273-ae8f-2fc4f4149eba-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrXy3-ML0Ey",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/paragon_GrXy3.html",
-      "tiltforumsUrl": null
-    },
-    {
       "name": "Pulp Fiction",
       "active": true,
       "opdbId": "GoEkx-MdEzN",
@@ -362,38 +234,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/pulp-fiction-rulesheet/8471"
-    },
-    {
-      "name": "Revenge From Mars",
-      "active": true,
-      "opdbId": "G50Wr-MLeZP",
-      "era": "Classic",
-      "manufactureYear": 1999,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "cga",
-      "playerCount": 4,
-      "ipdbId": 4446,
-      "imageUrl": "https://img.opdb.org/d452be09-bed3-4ae0-a0ac-ccc8387b528d-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "Royal Flush",
-      "active": true,
-      "opdbId": "GrEWx-MJNpE",
-      "era": "EM",
-      "manufactureYear": 1976,
-      "manufacturer": "Gottlieb",
-      "type": "em",
-      "display": "reels",
-      "playerCount": 4,
-      "ipdbId": 2035,
-      "imageUrl": "https://img.opdb.org/2636d7d6-d3e9-4b08-a717-afc25a47f19c-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrEWx-MJNpE",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/royalflush_GrEWx.html",
-      "tiltforumsUrl": null
     },
     {
       "name": "Seawitch",
@@ -460,22 +300,6 @@
       "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
     },
     {
-      "name": "Target Alpha",
-      "active": true,
-      "opdbId": "GrEZ5-MDBY0",
-      "era": "EM",
-      "manufactureYear": 1976,
-      "manufacturer": "Gottlieb",
-      "type": "em",
-      "display": "reels",
-      "playerCount": 4,
-      "ipdbId": 2500,
-      "imageUrl": "https://img.opdb.org/78208b4d-fe48-4c31-a418-93b8c21a3154-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrEZ5-MDBY0",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/targetalpha_GrEZ5.html",
-      "tiltforumsUrl": null
-    },
-    {
       "name": "Terminator 2: Judgment Day",
       "active": false,
       "opdbId": "GR9Bx-MQkd5",
@@ -538,54 +362,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/the-uncanny-x-men-rulesheet/9100"
-    },
-    {
-      "name": "Time Machine",
-      "active": true,
-      "opdbId": "GR99Y-MJ9Zy",
-      "era": "Classic",
-      "manufactureYear": 1988,
-      "manufacturer": "Data East",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 2565,
-      "imageUrl": "https://img.opdb.org/348bf8ed-c36a-41c0-9d80-cb4252c1d588-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/timemachinede_GR99Y.html",
-      "tiltforumsUrl": "https://tiltforums.com/t/american-girl-pinball-machine-just-in-time-for-christmas/5955"
-    },
-    {
-      "name": "Volley",
-      "active": true,
-      "opdbId": "G5Q19-MLeEN",
-      "era": "EM",
-      "manufactureYear": 1976,
-      "manufacturer": "Gottlieb",
-      "type": "em",
-      "display": "reels",
-      "playerCount": 1,
-      "ipdbId": 2743,
-      "imageUrl": "https://img.opdb.org/7e1dd688-05d7-46cd-8665-c1e794eea46b-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/G5Q19-MLeEN",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/volley_G5Q19.html",
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "World Cup Soccer",
-      "active": true,
-      "opdbId": "G42E2-MQP9e",
-      "era": "Classic",
-      "manufactureYear": 1994,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "dmd",
-      "playerCount": 4,
-      "ipdbId": 2811,
-      "imageUrl": "https://img.opdb.org/b4f8da44-a716-4047-ad32-3b5c63323893-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/wcs_G42E2.html",
-      "tiltforumsUrl": "https://tiltforums.com/t/world-cup-soccer-rule-sheet/10219"
     },
     {
       "name": "WWF Royal Rumble",
