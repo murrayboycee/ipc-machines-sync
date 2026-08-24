@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 5 wk3",
-  "sourceDate": "2026-08-18",
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk4",
+  "sourceDate": "2026-08-24",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -51,6 +51,22 @@
       "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
     },
     {
+      "name": "Blackout",
+      "active": false,
+      "opdbId": "GRwYo-MQoPw",
+      "era": "Classic",
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "ipdbId": 317,
+      "imageUrl": "https://img.opdb.org/7b614fdb-f92a-4106-ac78-9c35d8c43151-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwYo-MQoPw",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackout_GRwYo.html",
+      "tiltforumsUrl": null
+    },
+    {
       "name": "Card Whiz",
       "active": true,
       "opdbId": "GrEWx-MQPPX",
@@ -83,22 +99,6 @@
       "tiltforumsUrl": "https://tiltforums.com/t/deadpool-rulesheet/4311"
     },
     {
-      "name": "Deadpool (Pro)",
-      "active": true,
-      "opdbId": "G6lnq-Mq1kv",
-      "era": "Modern",
-      "manufactureYear": 2018,
-      "manufacturer": "Stern",
-      "type": "ss",
-      "display": "lcd",
-      "playerCount": 4,
-      "ipdbId": 6558,
-      "imageUrl": "https://img.opdb.org/4cb6b567-180c-4caf-83ab-159255de6061-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": "https://tiltforums.com/t/deadpool-rulesheet/4311"
-    },
-    {
       "name": "Dennis Lillee's Howzat!",
       "active": true,
       "opdbId": "GRzz6-MJN6K",
@@ -112,22 +112,6 @@
       "imageUrl": "https://img.opdb.org/53c6ae09-0185-4d5f-b75e-0f43a1d0f275-medium.jpg",
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRzz6-MJN6K",
       "pinballPrimerUrl": "https://pinballprimer.github.io/howzat_GRzz6.html",
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "Firepower II",
-      "active": true,
-      "opdbId": "GRWYk-Mb5OV",
-      "era": "Classic",
-      "manufactureYear": 1983,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 857,
-      "imageUrl": "https://img.opdb.org/3087d9c8-356d-4abf-be9e-025ee7d4b9dc-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRWYk-Mb5OV",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/firepower2_GRWYk.html",
       "tiltforumsUrl": null
     },
     {
@@ -186,22 +170,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/jaws-rulesheet/8781"
-    },
-    {
-      "name": "Johnny Mnemonic",
-      "active": true,
-      "opdbId": "GR6W8-Mb55B",
-      "era": "Classic",
-      "manufactureYear": 1995,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "dmd",
-      "playerCount": 4,
-      "ipdbId": 3683,
-      "imageUrl": "https://img.opdb.org/a61135d5-45c0-46ba-9be0-1a4ad2832429-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/johnnymnemonic_GR6W8.html",
-      "tiltforumsUrl": null
     },
     {
       "name": "King Kong: Myth of Terror Island (Premium)",
@@ -298,6 +266,22 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
+    },
+    {
+      "name": "Terminator 2: Judgment Day",
+      "active": false,
+      "opdbId": "GR9Bx-MQkd5",
+      "era": "Classic",
+      "manufactureYear": 1991,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "ipdbId": 2524,
+      "imageUrl": "https://img.opdb.org/8ad0a1f9-0d78-46a1-bd22-d048aa1e4ef2-medium.jpg",
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/terminator2_GR9Bx.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "The Party Zone",
