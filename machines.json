@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 5 wk5",
-  "sourceDate": "2026-09-01",
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk6",
+  "sourceDate": "2026-09-07",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -33,6 +33,38 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": "https://pinballprimer.github.io/batman66_GRoz4.html",
       "tiltforumsUrl": "https://tiltforums.com/t/batman-66-rulesheet/2463"
+    },
+    {
+      "name": "Black Knight",
+      "active": false,
+      "opdbId": "GrO7w-M9R03",
+      "era": "Classic",
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "ipdbId": 310,
+      "imageUrl": "https://img.opdb.org/5004afa6-f71b-4acc-9080-13db4fd25045-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrO7w-M9R03",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackknight_GrO7w.html",
+      "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
+    },
+    {
+      "name": "Blackout",
+      "active": false,
+      "opdbId": "GRwYo-MQoPw",
+      "era": "Classic",
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "ipdbId": 317,
+      "imageUrl": "https://img.opdb.org/7b614fdb-f92a-4106-ac78-9c35d8c43151-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwYo-MQoPw",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackout_GRwYo.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "Card Whiz",
@@ -96,6 +128,22 @@
       "imageUrl": "https://img.opdb.org/3087d9c8-356d-4abf-be9e-025ee7d4b9dc-medium.jpg",
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRWYk-Mb5OV",
       "pinballPrimerUrl": "https://pinballprimer.github.io/firepower2_GRWYk.html",
+      "tiltforumsUrl": null
+    },
+    {
+      "name": "Fish Tales",
+      "active": true,
+      "opdbId": "G5Wxd-MLxl3",
+      "era": "Classic",
+      "manufactureYear": 1992,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "ipdbId": 861,
+      "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg",
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/fishtales_G5Wxd.html",
       "tiltforumsUrl": null
     },
     {
@@ -186,22 +234,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/pulp-fiction-rulesheet/8471"
-    },
-    {
-      "name": "Revenge From Mars",
-      "active": true,
-      "opdbId": "G50Wr-MLeZP",
-      "era": "Classic",
-      "manufactureYear": 1999,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "cga",
-      "playerCount": 4,
-      "ipdbId": 4446,
-      "imageUrl": "https://img.opdb.org/d452be09-bed3-4ae0-a0ac-ccc8387b528d-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": null
     },
     {
       "name": "Seawitch",
