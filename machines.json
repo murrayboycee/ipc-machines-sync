@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 5 wk6",
-  "sourceDate": "2026-09-07",
+  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 5 wk6",
+  "sourceDate": "2026-09-08",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -51,22 +51,6 @@
       "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
     },
     {
-      "name": "Blackout",
-      "active": false,
-      "opdbId": "GRwYo-MQoPw",
-      "era": "Classic",
-      "manufactureYear": 1980,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 317,
-      "imageUrl": "https://img.opdb.org/7b614fdb-f92a-4106-ac78-9c35d8c43151-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwYo-MQoPw",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/blackout_GRwYo.html",
-      "tiltforumsUrl": null
-    },
-    {
       "name": "Card Whiz",
       "active": true,
       "opdbId": "GrEWx-MQPPX",
@@ -112,22 +96,6 @@
       "imageUrl": "https://img.opdb.org/53c6ae09-0185-4d5f-b75e-0f43a1d0f275-medium.jpg",
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRzz6-MJN6K",
       "pinballPrimerUrl": "https://pinballprimer.github.io/howzat_GRzz6.html",
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "Firepower II",
-      "active": true,
-      "opdbId": "GRWYk-Mb5OV",
-      "era": "Classic",
-      "manufactureYear": 1983,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 857,
-      "imageUrl": "https://img.opdb.org/3087d9c8-356d-4abf-be9e-025ee7d4b9dc-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRWYk-Mb5OV",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/firepower2_GRWYk.html",
       "tiltforumsUrl": null
     },
     {
@@ -236,6 +204,22 @@
       "tiltforumsUrl": "https://tiltforums.com/t/pulp-fiction-rulesheet/8471"
     },
     {
+      "name": "Revenge From Mars",
+      "active": true,
+      "opdbId": "G50Wr-MLeZP",
+      "era": "Classic",
+      "manufactureYear": 1999,
+      "manufacturer": "Bally",
+      "type": "ss",
+      "display": "cga",
+      "playerCount": 4,
+      "ipdbId": 4446,
+      "imageUrl": "https://img.opdb.org/d452be09-bed3-4ae0-a0ac-ccc8387b528d-medium.jpg",
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": null
+    },
+    {
       "name": "Seawitch",
       "active": true,
       "opdbId": "GR6kB-MDz81",
@@ -298,22 +282,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
-    },
-    {
-      "name": "Terminator 2: Judgment Day",
-      "active": false,
-      "opdbId": "GR9Bx-MQkd5",
-      "era": "Classic",
-      "manufactureYear": 1991,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "dmd",
-      "playerCount": 4,
-      "ipdbId": 2524,
-      "imageUrl": "https://img.opdb.org/8ad0a1f9-0d78-46a1-bd22-d048aa1e4ef2-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/terminator2_GR9Bx.html",
-      "tiltforumsUrl": null
     },
     {
       "name": "The Party Zone",
