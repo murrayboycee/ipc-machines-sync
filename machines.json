@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 5 wk6",
-  "sourceDate": "2026-09-08",
+  "sourceName": "Pinawarra XL",
+  "sourceDate": "2026-09-12",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -33,22 +33,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": "https://pinballprimer.github.io/batman66_GRoz4.html",
       "tiltforumsUrl": "https://tiltforums.com/t/batman-66-rulesheet/2463"
-    },
-    {
-      "name": "Black Knight",
-      "active": false,
-      "opdbId": "GrO7w-M9R03",
-      "era": "Classic",
-      "manufactureYear": 1980,
-      "manufacturer": "Williams",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 310,
-      "imageUrl": "https://img.opdb.org/5004afa6-f71b-4acc-9080-13db4fd25045-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrO7w-M9R03",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/blackknight_GrO7w.html",
-      "tiltforumsUrl": "https://tiltforums.com/t/black-knight-sword-of-rage-rulesheet/5210"
     },
     {
       "name": "Card Whiz",
@@ -99,19 +83,19 @@
       "tiltforumsUrl": null
     },
     {
-      "name": "Fish Tales",
+      "name": "Firepower II",
       "active": true,
-      "opdbId": "G5Wxd-MLxl3",
+      "opdbId": "GRWYk-Mb5OV",
       "era": "Classic",
-      "manufactureYear": 1992,
+      "manufactureYear": 1983,
       "manufacturer": "Williams",
       "type": "ss",
-      "display": "dmd",
+      "display": "alphanumeric",
       "playerCount": 4,
-      "ipdbId": 861,
-      "imageUrl": "https://img.opdb.org/a7c8a8a1-2f47-4be7-9457-08ecc1c2b734-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": "https://pinballprimer.github.io/fishtales_G5Wxd.html",
+      "ipdbId": 857,
+      "imageUrl": "https://img.opdb.org/3087d9c8-356d-4abf-be9e-025ee7d4b9dc-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRWYk-Mb5OV",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/firepower2_GRWYk.html",
       "tiltforumsUrl": null
     },
     {
@@ -282,6 +266,22 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
+    },
+    {
+      "name": "Terminator 2: Judgment Day",
+      "active": false,
+      "opdbId": "GR9Bx-MQkd5",
+      "era": "Classic",
+      "manufactureYear": 1991,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "dmd",
+      "playerCount": 4,
+      "ipdbId": 2524,
+      "imageUrl": "https://img.opdb.org/8ad0a1f9-0d78-46a1-bd22-d048aa1e4ef2-medium.jpg",
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": "https://pinballprimer.github.io/terminator2_GR9Bx.html",
+      "tiltforumsUrl": null
     },
     {
       "name": "The Party Zone",
