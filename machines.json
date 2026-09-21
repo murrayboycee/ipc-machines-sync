@@ -1,6 +1,6 @@
 {
-  "sourceName": "Pinawarra XL",
-  "sourceDate": "2026-09-12",
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 6 wk1",
+  "sourceDate": "2026-09-21",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -35,19 +35,19 @@
       "tiltforumsUrl": "https://tiltforums.com/t/batman-66-rulesheet/2463"
     },
     {
-      "name": "Card Whiz",
-      "active": true,
-      "opdbId": "GrEWx-MQPPX",
-      "era": "EM",
-      "manufactureYear": 1976,
-      "manufacturer": "Gottlieb",
-      "type": "em",
-      "display": "reels",
-      "playerCount": 2,
-      "ipdbId": 447,
-      "imageUrl": "https://img.opdb.org/b1285db4-204d-4c02-b1be-91ba0a4a3869-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GrEWx-MQPPX",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/royalflush_GrEWx.html",
+      "name": "Blackout",
+      "active": false,
+      "opdbId": "GRwYo-MQoPw",
+      "era": "Classic",
+      "manufactureYear": 1980,
+      "manufacturer": "Williams",
+      "type": "ss",
+      "display": "alphanumeric",
+      "playerCount": 4,
+      "ipdbId": 317,
+      "imageUrl": "https://img.opdb.org/7b614fdb-f92a-4106-ac78-9c35d8c43151-medium.jpg",
+      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRwYo-MQoPw",
+      "pinballPrimerUrl": "https://pinballprimer.github.io/blackout_GRwYo.html",
       "tiltforumsUrl": null
     },
     {
@@ -96,22 +96,6 @@
       "imageUrl": "https://img.opdb.org/3087d9c8-356d-4abf-be9e-025ee7d4b9dc-medium.jpg",
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRWYk-Mb5OV",
       "pinballPrimerUrl": "https://pinballprimer.github.io/firepower2_GRWYk.html",
-      "tiltforumsUrl": null
-    },
-    {
-      "name": "Harlem Globetrotters On Tour",
-      "active": true,
-      "opdbId": "GRnwQ-M9R5d",
-      "era": "Classic",
-      "manufactureYear": 1978,
-      "manufacturer": "Bally",
-      "type": "ss",
-      "display": "alphanumeric",
-      "playerCount": 4,
-      "ipdbId": 1125,
-      "imageUrl": "https://img.opdb.org/6d886496-f132-44c5-94d3-43b76b3a1d05-medium.jpg",
-      "silverballManiaUrl": "https://rules.silverballmania.com/rules/GRnwQ-M9R5d",
-      "pinballPrimerUrl": "https://pinballprimer.github.io/harlem_GRnwQ.html",
       "tiltforumsUrl": null
     },
     {
@@ -234,22 +218,6 @@
       "silverballManiaUrl": "https://rules.silverballmania.com/rules/G4xqN-ML3o5",
       "pinballPrimerUrl": "https://pinballprimer.github.io/sinbad_G4xqN.html",
       "tiltforumsUrl": null
-    },
-    {
-      "name": "Star Trek (Pro)",
-      "active": true,
-      "opdbId": "Gryw4-MwNky",
-      "era": "Modern",
-      "manufactureYear": 2013,
-      "manufacturer": "Stern",
-      "type": "ss",
-      "display": "dmd",
-      "playerCount": 4,
-      "ipdbId": 6044,
-      "imageUrl": "https://img.opdb.org/7c67e993-4c92-490a-9d84-f06edfdbcf80-medium.jpg",
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": "https://tiltforums.com/t/star-trek-wiki/456"
     },
     {
       "name": "Stranger Things (Pro)",
