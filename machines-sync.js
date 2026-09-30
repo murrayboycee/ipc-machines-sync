@@ -4,6 +4,11 @@
 // tournament — Monday League, Tuesday League, or Pinawarra, whichever
 // happened most recently — and writes machines.json.
 //
+// IMPORTANT (updated): Match Play split their API onto its own subdomain.
+//   API calls now go to:      https://api.matchplay.events
+// (There's no human-facing Match Play link built by this script, unlike
+// sync.js, so there's only one base URL to worry about here.)
+//
 // Deliberately NOT using Match Play's organizer-level /api/arenas
 // endpoint: that list has accumulated duplicate historical records per
 // machine (e.g. the same machine appearing 2-3 times with conflicting
@@ -12,20 +17,13 @@
 // is a clean, deduplicated snapshot for that one night — the tradeoff is
 // it can be a few days stale on machine status, which is an acceptable
 // tradeoff for a reliable, non-duplicated list.
-//
-// Confirmed API shapes (from real responses, 2026-07):
-//   GET /api/tournaments?owner={id}&limit=100&page=N
-//     -> { data: [{ tournamentId, name, status, startUtc, startLocal,
-//                    test, type, ... }] }
-//   GET /api/tournaments/{id}?includeArenas=true
-//     -> { data: { ..., arenas: [{ arenaId, name, status, ... }] } }
 
 const fs = require("fs");
 
 const MATCHPLAY_API_TOKEN = process.env.MATCHPLAY_API_TOKEN;
-const MATCHPLAY_OWNER_ID = 25018;
-const MATCHPLAY_BASE = "https://app.matchplay.events";
 const OPDB_API_TOKEN = process.env.OPDB_API_TOKEN;
+const MATCHPLAY_OWNER_ID = 25018;
+const MATCHPLAY_API_BASE = "https://api.matchplay.events";
 const OPDB_BASE = "https://opdb.org";
 
 if (!MATCHPLAY_API_TOKEN) {
@@ -37,7 +35,7 @@ if (!OPDB_API_TOKEN) {
 }
 
 async function matchplayGet(path) {
-  const res = await fetch(`${MATCHPLAY_BASE}${path}`, {
+  const res = await fetch(`${MATCHPLAY_API_BASE}${path}`, {
     headers: { Authorization: `Bearer ${MATCHPLAY_API_TOKEN}` }
   });
   if (!res.ok) {
@@ -109,6 +107,13 @@ async function opdbGet(opdbId) {
   return res.json();
 }
 
+function classifyEra(year) {
+  if (!year) return null;
+  if (year < 1977) return "EM";
+  if (year < 2000) return "Classic";
+  return "Modern";
+}
+
 const TILTFORUMS_BASE = "https://tiltforums.com";
 const RULESHEET_MASTER_LIST_URL = `${TILTFORUMS_BASE}/t/rulesheet-master-list/7230`;
 let tiltforumsDebugged = false;
@@ -117,22 +122,11 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-// The Wiki Rulesheets community maintains a single curated index page
-// listing every rulesheet by manufacturer, e.g.:
-//   <a href="https://tiltforums.com/t/deadpool-rulesheet/4311">Deadpool</a>
-// Fetching this ONE page and matching against it is far more reliable
-// than searching per-machine (no rate limits, and it's a real curated
-// list rather than a fuzzy guess). Live search is only used as a
-// fallback for machines the master list doesn't cover.
 async function fetchRulesheetMasterList() {
   const res = await fetch(RULESHEET_MASTER_LIST_URL);
   if (!res.ok) throw new Error(`Master list fetch -> HTTP ${res.status}`);
   const html = await res.text();
 
-  // Match any <a ...>text</a> tag first, then pull href out of its
-  // attributes separately — this doesn't assume href is the first
-  // attribute or that it uses double quotes, since Discourse sometimes
-  // renders extra attributes (class, data-*, etc.) before href.
   const anchorRegex = /<a\s+([^>]*)>([^<]*)<\/a>/gi;
   const entries = [];
   let match;
@@ -153,9 +147,6 @@ async function fetchRulesheetMasterList() {
   return entries;
 }
 
-// Retries on HTTP 429 (rate limited) with increasing backoff — TiltForums
-// blocks anonymous search requests fairly aggressively, so a fixed short
-// delay between machines isn't enough on its own.
 async function tiltforumsSearch(query) {
   const url = `${TILTFORUMS_BASE}/search.json?q=${encodeURIComponent(query)}`;
   const delays = [3000, 6000, 12000];
@@ -174,17 +165,16 @@ async function tiltforumsSearch(query) {
   }
 }
 
-// Guards against accepting an irrelevant result (e.g. searching "Card
-// Whiz" returning "Rick and Morty" as the only hit). Checks BOTH
-// directions — the master list often uses a short generic name ("Batman
-// 66") while our machine name is a specific edition ("Batman 66
-// (Catwoman Signature Edition)"), so at least one direction needs a
-// strong (50%+) overlap of meaningful words (3+ letters).
-// Common short words that shouldn't count as "meaningful" overlap even
-// though they clear the 3-letter length filter — "the" is exactly 3
-// letters and was previously letting "The Party Zone" match "The
-// Mandalorian" at exactly the 50% threshold on that word alone.
 const STOPWORDS = new Set(["the", "and", "for", "with", "from"]);
+
+function tokens(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+}
 
 function meaningfulTokens(name) {
   return tokens(name).filter((t) => t.length >= 3 && !STOPWORDS.has(t));
@@ -217,9 +207,6 @@ function findInMasterList(machineName, masterListEntries) {
   return null;
 }
 
-// Fallback for machines not found in the master list — searches
-// TiltForums directly, restricted to the Wiki Rulesheets category first,
-// falling back to an unrestricted search, and rejecting irrelevant results.
 async function searchTiltforumsUrl(machineName) {
   try {
     let data = await tiltforumsSearch(`${machineName} rulesheet #game-specific:rulesheet-wikis`);
@@ -251,28 +238,6 @@ async function searchTiltforumsUrl(machineName) {
   }
 }
 
-// Buckets machines into a rough era based on manufacture year. Adjust
-// the cutoffs here if you'd rather draw the lines differently.
-function classifyEra(year) {
-  if (!year) return null;
-  if (year < 1977) return "EM";
-  if (year < 2000) return "Classic";
-  return "Modern";
-}
-
-function toIsoDate(dateStr) {
-  return dateStr ? dateStr.slice(0, 10) : "";
-}
-
-function tokens(s) {
-  return (s || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-}
-
 async function fetchAllMatchplayTournaments() {
   var all = [];
   var page = 1;
@@ -289,11 +254,8 @@ async function fetchAllMatchplayTournaments() {
   return all;
 }
 
-// Same exclusion patterns proven out in the main events sync script —
-// never treat a finals/semis/playoff/tiebreaker-type tournament as the
-// source for "current machine lineup".
-var ELIMINATION_TYPE_REGEX = /elimination|knockout/i;
-var NON_QUALIFIER_NAME_REGEX = /\bfinal(s)?\b|\bsemi(s)?(\s*final(s)?)?\b|\bquarter(s)?(\s*final(s)?)?\b|\btop\s*\d+\b|\bplay[\s-]?off(s)?\b|\bround of \d+\b|\bseeding\b|\bbest of the rest\b|\bwildcard\b|\bconsolation\b|\bplate\b|\btie[\s-]?breaker\b|\(?\s*\d+(st|nd|rd|th)?\s*-\s*\d+(st|nd|rd|th)\b\s*\)?/i;
+const ELIMINATION_TYPE_REGEX = /elimination|knockout/i;
+const NON_QUALIFIER_NAME_REGEX = /\bfinal(s)?\b|\bsemi(s)?(\s*final(s)?)?\b|\bquarter(s)?(\s*final(s)?)?\b|\btop\s*\d+\b|\bplay[\s-]?off(s)?\b|\bround of \d+\b|\bseeding\b|\bbest of the rest\b|\bwildcard\b|\bconsolation\b|\bplate\b|\btie[\s-]?breaker\b|\(?\s*\d+(st|nd|rd|th)?\s*-\s*\d+(st|nd|rd|th)\b\s*\)?/i;
 
 // Match Play's arena status for a small number of machines has proven
 // wrong across every tournament we've checked (not just one stale
@@ -335,8 +297,6 @@ async function main() {
     const d = toIsoDate(mt.startLocal || mt.startUtc || "");
     if (!d) return false;
 
-    // Strictly in the past — today itself doesn't count — and no more
-    // than 10 days ago.
     const daysAgo = (new Date(today).getTime() - new Date(d).getTime()) / (1000 * 60 * 60 * 24);
     return daysAgo > 0 && daysAgo <= 14;
   });
@@ -349,9 +309,7 @@ async function main() {
   }
 
   if (candidates.length > 0) {
-    const preview = candidates
-      .slice()
-      .sort((a, b) => daysAgo(a) - daysAgo(b));
+    const preview = candidates.slice().sort((a, b) => daysAgo(a) - daysAgo(b));
     console.log("Candidates (most recent first):");
     preview.forEach((mt) => console.log(`  - ${mt.name} | ${toIsoDate(mt.startLocal || mt.startUtc || "")} | ${daysAgo(mt).toFixed(0)} day(s) ago | status: ${mt.status}`));
   }
@@ -417,9 +375,6 @@ async function main() {
         m.display = info.display || null;
         m.playerCount = info.player_count || null;
         m.ipdbId = info.ipdb_id || null;
-        // Use OPDB's own canonical opdb_id from the response (may resolve
-        // aliases differently than what Match Play originally gave us) —
-        // this is what powers the Match Play rules-sheet link.
         m.opdbId = info.opdb_id || m.opdbId;
         const img = Array.isArray(info.images) && info.images.length > 0 ? info.images[0] : null;
         m.imageUrl = (img && img.urls && (img.urls.medium || img.urls.small)) || null;
@@ -450,20 +405,14 @@ async function main() {
 
   console.log(`\nMatching machines against all known rulesheet sources...`);
   for (const m of machines) {
-    // Silverball Mania: deterministic ID lookup, ~1960s-mid1980s coverage.
     m.silverballManiaUrl = null;
     if (m.manufactureYear && m.manufactureYear < 1986 && m.opdbId) {
       m.silverballManiaUrl = await checkSilverballManiaUrl(m.opdbId);
       await sleep(500);
     }
 
-    // Pinball Primer: deterministic ID lookup via the pre-fetched index —
-    // no extra network request per machine.
     m.pinballPrimerUrl = findPinballPrimerUrl(m.opdbId, primerIndex);
 
-    // TiltForums: master list first (curated, no rate limit), falling
-    // back to live search (rate-limit-safe, relevance-checked) only if
-    // the master list doesn't cover this machine.
     const masterMatch = findInMasterList(m.name, masterList);
     if (masterMatch) {
       m.tiltforumsUrl = masterMatch;
@@ -483,6 +432,10 @@ async function main() {
 
   fs.writeFileSync("machines.json", JSON.stringify(output, null, 2));
   console.log(`\nWrote ${machines.length} machines to machines.json.`);
+}
+
+function toIsoDate(dateStr) {
+  return dateStr ? dateStr.slice(0, 10) : "";
 }
 
 main().catch((err) => {
