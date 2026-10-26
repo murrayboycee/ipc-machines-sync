@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 6 wk5",
-  "sourceDate": "2026-10-20",
+  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 6 wk6",
+  "sourceDate": "2026-10-26",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -136,6 +136,15 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": "https://tiltforums.com/t/stranger-things-rulesheet-wip/6093"
+    },
+    {
+      "name": "Terminator 2: Judgment Day",
+      "active": false,
+      "opdbId": null,
+      "era": null,
+      "silverballManiaUrl": null,
+      "pinballPrimerUrl": null,
+      "tiltforumsUrl": null
     },
     {
       "name": "The Party Zone",
