@@ -1,6 +1,6 @@
 {
-  "sourceName": "Illawarra Pinball Club 2026: Monday League - Season 7 wk3",
-  "sourceDate": "2026-11-23",
+  "sourceName": "Illawarra Pinball Club 2026: Tuesday League - Season 7 wk3",
+  "sourceDate": "2026-11-24",
   "machines": [
     {
       "name": "Avengers: Infinity Quest (Pro)",
@@ -55,15 +55,6 @@
       "silverballManiaUrl": null,
       "pinballPrimerUrl": null,
       "tiltforumsUrl": null
-    },
-    {
-      "name": "Iron Maiden: Legacy of the Beast",
-      "active": true,
-      "opdbId": null,
-      "era": null,
-      "silverballManiaUrl": null,
-      "pinballPrimerUrl": null,
-      "tiltforumsUrl": "https://tiltforums.com/t/iron-maiden-pinball-rulesheet/3787"
     },
     {
       "name": "James Bond 007 (Pro)",
